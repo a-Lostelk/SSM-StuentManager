@@ -24,6 +24,7 @@
     <mybatis.pagehelper>5.0.3</mybatis.pagehelper>
     <mysql.connector.version>5.1.29</mysql.connector.version>
     <log4j.version>1.2.12</log4j.version>
+    <common.logging.version>1.2</common.logging.version>
     <log4j-api.version>2.11.2</log4j-api.version>
     <jstl.version>1.2</jstl.version>
     <jsp.api.version>2.2.1</jsp.api.version>
@@ -44,7 +45,7 @@
       <artifactId>aspectjweaver</artifactId>
       <version>1.8.9</version>
     </dependency>
-    <!--Apache-->
+    <!--Apache commons工具类-->
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
@@ -70,6 +71,18 @@
       <artifactId>commons-collections</artifactId>
       <version>3.2.1</version>
     </dependency>
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>1.9.3</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.ezmorph</groupId>
+      <artifactId>ezmorph</artifactId>
+      <version>1.0.6</version>
+    </dependency>
+
+
 
     <!--spring-->
     <dependency>
@@ -171,15 +184,20 @@
       <version>${log4j.version}</version>
     </dependency>
     <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>${common.logging.version}</version>
+    </dependency>
+    <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
       <version>${log4j-api.version}</version>
     </dependency>
     <!--JSP-->
     <dependency>
-      <groupId>javax.servlet.jsp.jstl</groupId>
-      <artifactId>jstl</artifactId>
-      <version>${jstl.version}</version>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -187,13 +205,12 @@
       <version>3.1.0</version>
       <scope>provided</scope>
     </dependency>
-
-    <dependency>
+   <!-- <dependency>
       <groupId>javax.servlet.jsp</groupId>
       <artifactId>javax.servlet.jsp-api</artifactId>
       <version>${jsp.api.version}</version>
       <scope>provided</scope>
-    </dependency>
+    </dependency>-->
     <!--jackson-->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -220,6 +237,7 @@
       <groupId>net.sf.json-lib</groupId>
       <artifactId>json-lib</artifactId>
       <version>2.4</version>
+      <classifier>jdk1.8</classifier>
     </dependency>
     <dependency>
       <groupId>org.hamcrest</groupId>

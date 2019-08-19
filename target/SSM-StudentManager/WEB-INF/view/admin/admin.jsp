@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -20,10 +22,9 @@
                  "menuid": "1", "icon": "", "menuname": "用户(管理员)管理",
                  "menus": [
                      {
-                         "height": 200,
                          "menuid": "11",
                          "menuname": "用户管理",
-                         "icon": "man",
+                         "icon": "icon-man",
                          "url": "../user/list"}
 
                  ]
@@ -34,12 +35,12 @@
                      {
                          "menuid": "31",
                          "menuname": "年级列表",
-                         "icon": "icon-world",
+                         "icon": "icon-filter",
                          "url": "../grade/list"},
                  ]
              },
              {
-                 "menuid": "3", "icon": "", "menuname": "班级信息管理",
+                 "menuid": "4", "icon": "", "menuname": "班级信息管理",
                  "menus": [
                      {
                          "menuid": "31",
@@ -50,7 +51,7 @@
              },
 
              {
-                 "menuid": "2", "icon": "", "menuname": "学生信息管理",
+                 "menuid": "5", "icon": "", "menuname": "学生信息管理",
                  "menus": [
                      {
                          "menuid": "21",
@@ -61,7 +62,7 @@
                  ]
              },
              {
-                 "menuid": "4", "icon": "", "menuname": "基础信息管理",
+                 "menuid": "6", "icon": "", "menuname": "基础信息管理",
                  "menus": [
                      {
                          "menuid": "41",
@@ -84,7 +85,7 @@
                  ]
              },
              {
-                 "menuid": "5", "icon": "", "menuname": "系统管理",
+                 "menuid": "7", "icon": "", "menuname": "系统管理",
                  "menus": [
                      {
                          "menuid": "51",
@@ -105,14 +106,13 @@
 		    <img src="images/noscript.gif" alt='抱歉，请开启脚本支持！' />
 		</div>
 	</noscript>
-    <div region="north" split="true" border="false" style="overflow: hidden; height: 30px;
-        background: #7f99be repeat-x center 50%;
+    <div region="north" split="true" border="false" style="overflow: hidden; height: 30px;background: #7f99be;
         line-height: 20px;color: #fff; font-family: Verdana, 微软雅黑,黑体">
-        <span style="float:right; padding-right:20px;" class="head"><span style="color:red; font-weight:bold;">${user.name}&nbsp;</span>您好&nbsp;&nbsp;&nbsp;<a href="SystemServlet?method=LoginOut" id="loginOut">安全退出</a></span>
+        <span style="float:right; padding-right:20px;" class="head"><span style="color:red; font-weight:bold;">${userInfo.username}&nbsp;</span>您好&nbsp;&nbsp;&nbsp;<a href="SystemServlet?method=LoginOut" id="loginOut">安全退出</a></span>
         <span style="padding-left:10px; font-size: 16px; ">学生信息管理系统</span>
     </div>
     <div region="south" split="true" style="height: 30px; background: #D2E0F2; ">
-        <div class="footer">Copyright &copy; SWU By MirFang</div>
+        <div class="footer">Copyright &copy; SWU By MirFang </div>
     </div>
     <div region="west" hide="true" split="true" title="导航菜单" style="width:180px;" id="west">
 	<div id="nav" class="easyui-accordion" fit="true" border="false">
@@ -125,7 +125,5 @@
 			<jsp:include page="/WEB-INF/view/admin/welcome.jsp" />
 		</div>
     </div>
-	
-
 </body>
 </html>

@@ -47,27 +47,29 @@ public class SystemController {
 
     /**
      *
-     * @param loginParamDTO userName.pwssword等参数DTO
      * @param request
      * @return
      */
     @ResponseBody
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public Map<String, String> login(LoginParamDTO loginParamDTO,
+    public Map<String, String> login(@RequestParam(value="username",required=true) String username,
+                                     @RequestParam(value="password",required=true) String password,
+                                     @RequestParam(value="vcode",required=true) String vcode,
+                                     @RequestParam(value="type",required=true) int type,
                                      HttpServletRequest request) {
         HashMap<String, String> hashMap = new HashMap<>();
-        if (StringUtils.isEmpty(loginParamDTO.getUsername())) {
+        if (StringUtils.isEmpty(username)) {
             hashMap.put("type", "error");
             hashMap.put("msg", "用户名不能为空");
             //返回不继续执行
             return hashMap;
         }
-        if (StringUtils.isEmpty(loginParamDTO.getPassword())) {
+        if (StringUtils.isEmpty(password)) {
             hashMap.put("type", "error");
             hashMap.put("msg", "密码不能为空");
             return hashMap;
         }
-        if (StringUtils.isEmpty(loginParamDTO.getVcode())) {
+        if (StringUtils.isEmpty(vcode)) {
             hashMap.put("type", "error");
             hashMap.put("msg", "验证码不能为空");
             return hashMap;
@@ -80,7 +82,7 @@ public class SystemController {
             return hashMap;
 
         }
-        if (!loginParamDTO.getVcode().toUpperCase().equals(loginCpacha.toUpperCase())) {
+        if (!vcode.toUpperCase().equals(loginCpacha.toUpperCase())) {
             hashMap.put("type", "error");
             hashMap.put("msg", "验证码错误");
             return hashMap;
@@ -88,26 +90,28 @@ public class SystemController {
         //释放session空间
         request.getSession().setAttribute("loginCpacha", null);
 
-        //学生
-        if (loginParamDTO.getType() == 2) {
+        int studentType = 2;
+        int adminType = 1;
+        //管理员
+        if (type == adminType) {
             //从数据库中查找用户
-            User user = userService.findByUserName(loginParamDTO.getUsername());
+            User user = userService.findByUserName(username);
             if (user == null) {
                 hashMap.put("type", "error");
                 hashMap.put("msg", "用户不存在");
                 return hashMap;
             }
-            if (!loginParamDTO.getPassword().equals(user.getPassword())) {
+            if (!password.equals(user.getPassword())) {
                 hashMap.put("type", "error");
                 hashMap.put("msg", "密码不正确");
                 return hashMap;
             }
-            request.getSession().setAttribute("user", user);
+            request.getSession().setAttribute("userInfo", user);
         }
-        //管理员登录
-        if (loginParamDTO.getType() == 1) {
-
-        }
+//        //管理员登录
+//        if (loginParamDTO.getType() == 1) {
+//
+//        }
         hashMap.put("type", "success");
         hashMap.put("msg", "登录成功");
         return hashMap;

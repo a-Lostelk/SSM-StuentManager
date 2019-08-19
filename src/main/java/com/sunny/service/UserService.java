@@ -3,6 +3,9 @@ package com.sunny.service;
 import com.sunny.entity.User;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by IntelliJ IDEA.
  *
@@ -18,5 +21,19 @@ public interface UserService {
      * @return
      */
     User findByUserName(String username);
+
+    /**
+     * 添加
+     * @param user
+     * @return
+     */
+    int add(User user);
+
+    /**
+     * 列表展示
+     * @param map
+     * @return
+     */
+    List<User> findList(Map<String, Object> map);
 
 }

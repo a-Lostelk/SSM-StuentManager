@@ -13,5 +13,5 @@ public class LoginParamDTO {
     private String username;
     private String password;
     private String vcode;
-    private int type;
+    private Integer type;
 }

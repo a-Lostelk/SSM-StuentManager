@@ -3,6 +3,9 @@ package com.sunny.dao;
 import com.sunny.entity.User;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by IntelliJ IDEA.
  *
@@ -11,5 +14,25 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserDao {
+
+    /**
+     * 根据用户名查询
+     * @param username
+     * @return
+     */
     User findByUserName(String username);
+
+    /**
+     * 添加用户
+     * @param user
+     * @return
+     */
+    int add(User user);
+
+    /**
+     * 列表用户
+     * @param map
+     * @return
+     */
+    List<User> findList(Map<String, Object> map);
 }

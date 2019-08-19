@@ -21,7 +21,7 @@
 	<p>工具：Maven, Git</p>
 	<p>服务器：tomcat 8.0</p>
 	<p>数据库：MySQL 5.7</p>
-	<p>系统采用技术： Spring+mybatis+SpringMvc面向接口编程,maven项目管理，git代码托管</p>
+	<p>系统采用技术： Spring+mybatis+SpringMvc+EasyUi面向接口编程,maven项目管理，git代码托管</p>
 </div>
 </body>
 </html>

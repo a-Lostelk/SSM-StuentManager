@@ -6,6 +6,9 @@ import com.sunny.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by IntelliJ IDEA.
  *
@@ -21,6 +24,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByUserName(String username) {
         return userDao.findByUserName(username);
+    }
+
+    @Override
+    public int add(User user) {
+        return userDao.add(user);
+    }
+
+    @Override
+    public List<User> findList(Map<String, Object> map) {
+        return userDao.findList(map);
     }
 
 }

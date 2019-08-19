@@ -44,19 +44,17 @@
     </bean>
 
     <!-- 后台访问拦截器 -->
-
-   <!-- <mvc:interceptors>
+    <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            &lt;!&ndash;<mvc:mapping path="/grade/*"/>&ndash;&gt;
-            <mvc:exclude-mapping path="/system/login"/>
-            <mvc:exclude-mapping path="/system/get_cpacha"/>
+            <!--<mvc:mapping path="/grade/*"/>-->
+            <!--拦截器放行的资源-->
+            <mvc:exclude-mapping path="/System/login"/>
+            <mvc:exclude-mapping path="/System/get_Cpacha"/>
             <mvc:exclude-mapping path="/h-ui/**"/>
             <mvc:exclude-mapping path="/easyui/**"/>
-            <mvc:exclude-mapping path="/home-resources/**"/>
-            <mvc:exclude-mapping path="/home/**"/>
-            <bean class="com.ischoolbar.programmer.interceptor.LoginInterceptor"></bean>
+            <bean class="com.sunny.interceptor.LoginInterceptor"></bean>
         </mvc:interceptor>
-    </mvc:interceptors>-->
+    </mvc:interceptors>
 
 </beans>
