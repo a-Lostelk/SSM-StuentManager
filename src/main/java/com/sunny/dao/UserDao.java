@@ -35,4 +35,14 @@ public interface UserDao {
      * @return
      */
     List<User> findList(Map<String, Object> map);
+
+    /**
+     * 查询总记录数
+     * @param map
+     * @return
+     */
+    int getTotal(Map<String, Object> map);
+
+    int edit(User user);
+
 }

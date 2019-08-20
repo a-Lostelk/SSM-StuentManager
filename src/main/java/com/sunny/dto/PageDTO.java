@@ -51,7 +51,7 @@ public class PageDTO {
 
     /**
      * 当前页是第1页，数据库中的偏移量是从下标为0的第一条数据开始
-     * 当前页是第2页，(2-1)*10=10 (3-1)*10=20,以此类推
+     * 当前页是第2页，(1-1)*10=0 (2-1)*10=10 (3-1)*10=20,以此类推
      */
     public void setOffset(Integer offset) {
         this.offset = (page - 1) * rows;

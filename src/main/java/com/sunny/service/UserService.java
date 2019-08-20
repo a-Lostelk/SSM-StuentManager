@@ -36,4 +36,13 @@ public interface UserService {
      */
     List<User> findList(Map<String, Object> map);
 
+    /**
+     * 获取总记录数
+     * @param map
+     * @return
+     */
+    int getTotal(Map<String, Object> map);
+
+    int edit(User user);
+
 }

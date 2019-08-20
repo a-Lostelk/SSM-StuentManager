@@ -36,4 +36,14 @@ public class UserServiceImpl implements UserService {
         return userDao.findList(map);
     }
 
+    @Override
+    public int getTotal(Map<String, Object> map) {
+        return userDao.getTotal(map);
+    }
+
+    @Override
+    public int edit(User user) {
+        return userDao.edit(user);
+    }
+
 }

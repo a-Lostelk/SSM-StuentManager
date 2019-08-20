@@ -34,7 +34,7 @@
                 {field: 'chk', checkbox: true, width: 50},
                 {field: 'id', title: 'ID', width: 50, sortable: true},
                 {field: 'username', title: '用户名', width: 150, sortable: true},
-                {field: 'password', title: '密码', width: 100},
+                {field: 'password', title: '密码', width: 150},
 
             ]],
             toolbar: "#toolbar"
@@ -123,7 +123,6 @@
 						}else if (($("#confirm_password")).val() != ($("#add_password")).val()) {
                             $.messager.alert("消息提醒", "两次密码不相同!", "error");
                             $("#confirm_password").textbox('setValue', '');
-                            $("#add_password").textbox('setValue', '');
                             return;
                         } else {
                             var data = $("#addForm").serialize();
@@ -140,6 +139,7 @@
                                         //清空原表格数据设置为空
                                         $("#add_username").textbox('setValue', "");
                                         $("#add_password").textbox('setValue', "");
+                                        $("#confirm_password").textbox('setValue', '');
                                         //重新刷新页面数据
                                         $('#dataList').datagrid("reload");
 
@@ -163,7 +163,7 @@
 	  	$("#editDialog").dialog({
 	  		title: "修改用户信息",
 	    	width: 350,
-	    	height: 200,
+	    	height: 250,
 	    	iconCls: "icon-edit",
 	    	modal: true,
 	    	collapsible: false,
@@ -181,10 +181,12 @@
 						if(!validate){
 							$.messager.alert("消息提醒","请检查你输入的数据!","warning");
 							return;
-						} else{
-							
+						} else if (($("#confirm_edit_password")).val() != ($("#edit_password")).val()) {
+                            $.messager.alert("消息提醒", "两次密码不相同!", "error");
+                            $("#confirm_edit_password").textbox('setValue', '');
+                            return;
+                        }else{
 							var data = $("#editForm").serialize();
-							
 							$.ajax({
 								type: "post",
 								url: "edit",
@@ -210,12 +212,14 @@
 					}
 				},
 			],
+            //打开之前获取到数据
 			onBeforeOpen: function(){
 				var selectRow = $("#dataList").datagrid("getSelected");
 				//设置值
 				$("#edit-id").val(selectRow.id);
 				$("#edit_username").textbox('setValue', selectRow.username);
 				$("#edit_password").textbox('setValue', selectRow.password);
+                $("#confirm_edit_password").textbox('setValue', "");
 			}
 	    });
 	   	
@@ -229,7 +233,7 @@
 	</script>
 </head>
 <body>
-	<!-- 数据列表 -->
+	<!-- 数据列表(填充数据并自动进行分页功能) -->
 	<table id="dataList" cellspacing="0" cellpadding="0"> 
 	    
 	</table> 
@@ -285,13 +289,20 @@
 	    		<tr >
 	    			<td>用户名:</td>
 	    			<td>
-	    				<input id="edit_username"  class="easyui-textbox" style="width: 200px; height: 30px;" type="text" name="username" data-options="required:true, missingMessage:'请填写用户名'"  />
+	    				<input id="edit_username"  class="easyui-textbox" style="width: 200px; height: 30px;" type="text" name="username"
+                               data-options="required:true, missingMessage:'请填写修改后的用户名'"  />
 	    			</td>
 	    		</tr>
 	    		<tr>
 	    			<td>密码:</td>
-	    			<td><input id="edit_password" style="width: 200px; height: 30px;" class="easyui-textbox" type="password" name="password" data-options="required:true, missingMessage:'请填写密码'"  /></td>
+	    			<td><input id="edit_password" style="width: 200px; height: 30px;" class="easyui-textbox" type="password"
+                               name="password" data-options="required:true, missingMessage:'请填写修改后的密码'"  /></td>
 	    		</tr>
+                <tr>
+                    <td>新密码:</td>
+                    <td><input id="confirm_edit_password" style="width: 200px; height: 30px;" class="easyui-textbox" type="password"
+                               data-options="required:true, missingMessage:'请确认修改后的密码'"/></td>
+                </tr>
 	    	</table>
 	    </form>
 	</div>
