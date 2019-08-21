@@ -43,6 +43,12 @@ public interface UserDao {
      */
     int getTotal(Map<String, Object> map);
 
+    /**
+     * 编辑
+     * @param user
+     * @return
+     */
     int edit(User user);
 
+    int delete(String ids);
 }

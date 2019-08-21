@@ -23,4 +23,8 @@
         UPDATE user SET username=#{username},password=#{password} WHERE id = #{id}
     </update>
 
+    <delete id="delete">
+        DELETE FROM user where id in (${value})
+    </delete>
+
 </mapper>

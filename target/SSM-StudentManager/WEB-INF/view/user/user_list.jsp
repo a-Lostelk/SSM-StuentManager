@@ -63,21 +63,24 @@
 		    	$("#editDialog").dialog("open");
             }
 	    });
+
 	    //删除
 	    $("#delete").click(function(){
+	        //获取被选中的行，
 	    	var selectRows = $("#dataList").datagrid("getSelections");
         	var selectLength = selectRows.length;
         	if(selectLength == 0){
             	$.messager.alert("消息提醒", "请选择数据进行删除!", "warning");
             } else{
             	var ids = [];
+            	//将被选中的行id放入数组中，完成多选功能
             	$(selectRows).each(function(i, row){
             		ids[i] = row.id;
             	});
             	$.messager.confirm("消息提醒", "将删除与用户相关的所有数据，确认继续？", function(r){
             		if(r){
             			$.ajax({
-							type: "post",
+							type: "get",
 							url: "delete",
 							data: {ids: ids},
 							dataType:'json',

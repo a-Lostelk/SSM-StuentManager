@@ -108,7 +108,7 @@ public class UserController {
      * @param userEdit
      * @return
      */
-    @RequestMapping(value = "/edit",method = RequestMethod.POST)
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
     @ResponseBody
     public Map<String,String> edit(User userEdit){
         Map<String, String> map = new HashMap<>();
@@ -145,6 +145,38 @@ public class UserController {
         }
         map.put("type", "success");
         map.put("msg", "修改成功");
+        return map;
+    }
+
+    /**
+     * 用户删除
+     * @param ids
+     * @return
+     */
+    @RequestMapping(value = "/delete",method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String,String> edit(
+            @RequestParam(value = "ids[]", required = true) Long[] ids) {
+        Map<String, String> map = new HashMap<>();
+        if (ids == null) {
+            map.put("type", "error");
+            map.put("msg", "请选择要删除的数据");
+            return map;
+        }
+        String string = "";
+        for (Long id:
+             ids) {
+            string += id + ",";
+        }
+        //截取传递过来的id
+        string = string.substring(0, string.length() - 1);
+        if (userService.delete(string) <= 0) {
+            map.put("type", "error");
+            map.put("msg", "删除失败");
+            return map;
+        }
+        map.put("type", "success");
+        map.put("msg", "删除成功");
         return map;
     }
 

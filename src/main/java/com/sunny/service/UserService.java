@@ -43,6 +43,18 @@ public interface UserService {
      */
     int getTotal(Map<String, Object> map);
 
+    /**
+     * 编辑
+     * @param user
+     * @return
+     */
     int edit(User user);
+
+    /**
+     * 删除一个或多个
+     * @param ids
+     * @return
+     */
+    int delete(String ids);
 
 }
