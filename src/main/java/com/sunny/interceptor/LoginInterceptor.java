@@ -1,8 +1,7 @@
 package com.sunny.interceptor;
 
 import com.sunny.entity.User;
-import org.apache.log4j.Logger;
-import org.json.simple.JSONObject;
+import net.sf.json.JSONObject;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -43,7 +42,7 @@ public class LoginInterceptor implements HandlerInterceptor {
                 Map<String, String> hashMap = new HashMap<>();
                 hashMap.put("type", "error");
                 hashMap.put("msg", "登录已经失效，请重新登录");
-                response.getWriter().write(JSONObject.toJSONString(hashMap));
+                response.getWriter().write(JSONObject.fromObject(hashMap).toString());
                 return false;
             }
             //未登录跳转到登录页面

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunny.dao.ClazzDao">
+    <!--由于1=1永远是成立的，返回TRUE,条件为真；所以，这条语句，
+    就相当于select * from table，返回查询表中的所有数据
+    做查询页面，并且，可查询的选项有多个，同时，还让用户自行选择
+    并输入查询关键词，那么，按平时的查询语句的动态构造-->
+    <insert id="add" parameterType="com.sunny.entity.Clazz">
+        INSERT INTO clazz(name,gradeId,remark)VALUE (#{name},#{gradeId},#{remark});
+    </insert>
+
+    <update id="edit" parameterType="com.sunny.entity.Clazz">
+        UPDATE clazz SET name=#{name},gradeId=#{gradeId},remark=#{remark} WHERE id = #{id}
+    </update>
+    <delete id="delete" parameterType="java.lang.String">
+        DELETE FROM clazz where id in (${value})
+    </delete>
+
+    <select id="findList" resultType="com.sunny.entity.Clazz" parameterType="java.util.Map">
+        SELECT * FROM clazz WHERE 1 = 1
+        <if test="name != null and name != ''">
+            and name LIKE concat(concat('%',#{name}),'%')
+        </if>
+        <if test="gradeId != null and gradeId != ''">
+            and gradeId = #{gradeId}
+        </if>
+        limit #{offset},#{pageSize}
+    </select>
+    <select id="getTotal" resultType="java.lang.Integer" parameterType="java.util.Map">
+        SELECT COUNT(id) FROM clazz WHERE 1=1
+        <if test="name != null">
+            and name LIKE #{name}
+        </if>
+        <if test="gradeId != null">
+            and gradeId = #{gradeId}
+        </if>
+    </select>
+    <select id="findAll" resultType="com.sunny.entity.Clazz">
+        SELECT * FROM clazz
+    </select>
+</mapper>

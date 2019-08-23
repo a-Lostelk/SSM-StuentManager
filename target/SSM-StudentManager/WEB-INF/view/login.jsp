@@ -74,14 +74,14 @@
         <label class="form-label col-3"><i class="Hui-iconfont">&#xe60d;</i></label>
         <div class="formControls col-8">
           <input id="username" name="username" type="text" placeholder="用户名" class="input-text size-L"
-                 onfocus="this.placeholder=''" onblur="this.placeholder='用户名'">
+                 onfocus="this.placeholder=''" onblur="this.placeholder='用户名'" value="admin">
         </div>
       </div>
       <div class="row cl">
         <label class="form-label col-3"><i class="Hui-iconfont">&#xe60e;</i></label>
         <div class="formControls col-8">
           <input id="password" name="password" type="password" placeholder="密码" class="input-text size-L"
-                 onfocus="this.placeholder=''" onblur="this.placeholder='密码'">
+                 onfocus="this.placeholder=''" onblur="this.placeholder='密码'" value="123">
         </div>
       </div>
       <div class="row cl">

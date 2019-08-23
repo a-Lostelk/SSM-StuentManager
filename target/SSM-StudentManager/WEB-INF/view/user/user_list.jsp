@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<title>用户列表</title>
 	<link rel="stylesheet" type="text/css" href="/easyui/themes/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="/easyui/css/icon.css">
+	<link rel="stylesheet" type="text/css" href="/easyui/themes/icon.css">
 	<link rel="stylesheet" type="text/css" href="/easyui/css/demo.css">
 	<script type="text/javascript" src="/easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
@@ -13,11 +13,10 @@
 	<script type="text/javascript">
 	$(function() {	
 		var table;
-		
-		//datagrid初始化 
+		//datagrid初始化
         $('#dataList').datagrid({
             title: '用户列表',
-            iconCls: 'icon',//图标
+            iconCls: '',//图标
             border: true,
             collapsible: false,//是否可折叠的
             fit: true,//自动大小
@@ -32,7 +31,7 @@
             remoteSort: false,
             columns: [[
                 {field: 'chk', checkbox: true, width: 50},
-                {field: 'id', title: 'ID', width: 50, sortable: true},
+                {field: 'id', title: 'ID', width: 50, sortable: true},	//可以根据字母和数组进行排序
                 {field: 'username', title: '用户名', width: 150, sortable: true},
                 {field: 'password', title: '密码', width: 150},
 
@@ -309,7 +308,5 @@
 	    	</table>
 	    </form>
 	</div>
-	
-	
 </body>
 </html>

@@ -1,0 +1,62 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Java template
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+target/SSM-StudentManager/WEB-INF/classes/com/sunny/controller/ClazzController.class
+target/SSM-StudentManager/WEB-INF/classes/com/sunny/controller/GradeController.class
+target/SSM-StudentManager/WEB-INF/classes/com/sunny/dao/ClazzDao.class
+target/SSM-StudentManager/WEB-INF/classes/com/sunny/dao/GradeDao.class
+target/SSM-StudentManager/WEB-INF/classes/com/sunny/entity/Clazz.class
+target/SSM-StudentManager/WEB-INF/classes/com/sunny/entity/Grade.class
+target/SSM-StudentManager/WEB-INF/classes/com/sunny/service/ClazzService.class
+target/SSM-StudentManager/WEB-INF/classes/com/sunny/service/GradeService.class
+target/SSM-StudentManager/WEB-INF/classes/com/sunny/service/impl/ClazzServiceImpl.class
+target/SSM-StudentManager/WEB-INF/classes/com/sunny/service/impl/GradeServiceImpl.class
+target/SSM-StudentManager/WEB-INF/classes/com/sunny/util/StringUtil.class
+target/SSM-StudentManager/WEB-INF/classes/config/mybatis/mapper/ClazzMapper.xml
+target/SSM-StudentManager/WEB-INF/classes/config/mybatis/mapper/GradeDaoMapper.xml
+target/SSM-StudentManager/WEB-INF/lib/attoparser-2.0.5.RELEASE.jar
+target/SSM-StudentManager/WEB-INF/lib/javassist-3.20.0-GA.jar
+target/SSM-StudentManager/WEB-INF/lib/jstl-1.2.jar
+target/SSM-StudentManager/WEB-INF/lib/ognl-3.1.12.jar
+target/SSM-StudentManager/WEB-INF/lib/slf4j-api-1.7.25.jar
+target/SSM-StudentManager/WEB-INF/lib/thymeleaf-3.0.10.RELEASE.jar
+target/SSM-StudentManager/WEB-INF/lib/unbescape-1.1.6.RELEASE.jar
+target/SSM-StudentManager/WEB-INF/view/clazz/
+target/SSM-StudentManager/WEB-INF/view/grade/
+target/classes/com/sunny/controller/ClazzController.class
+target/classes/com/sunny/controller/GradeController.class
+target/classes/com/sunny/dao/ClazzDao.class
+target/classes/com/sunny/dao/GradeDao.class
+target/classes/com/sunny/entity/Clazz.class
+target/classes/com/sunny/entity/Grade.class
+target/classes/com/sunny/service/ClazzService.class
+target/classes/com/sunny/service/GradeService.class
+target/classes/com/sunny/service/impl/ClazzServiceImpl.class
+target/classes/com/sunny/service/impl/GradeServiceImpl.class
+target/classes/com/sunny/util/StringUtil.class
+target/classes/config/mybatis/mapper/ClazzMapper.xml
+target/classes/config/mybatis/mapper/GradeDaoMapper.xml
+target/generated-sources/

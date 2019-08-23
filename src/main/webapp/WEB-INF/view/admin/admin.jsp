@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/h-ui/favicon.ico"/>
 	<link rel="bookmark" href="/h-ui/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="/easyui/css/default.css" />
-    <link rel="stylesheet" type="text/css" href="/easyui/css/icon.css"/>
+    <link rel="stylesheet" type="text/css" href="/easyui/themes/icon.css"/>
     <link rel="stylesheet" type="text/css" href="/easyui/themes/default/easyui.css" />
     <script type="text/javascript" src="/easyui/jquery.min.js"></script>
     <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
@@ -33,7 +33,7 @@
                  "menuid": "3", "icon": "", "menuname": "年级信息管理",
                  "menus": [
                      {
-                         "menuid": "31",
+                         "menuid": "21",
                          "menuname": "年级列表",
                          "icon": "icon-filter",
                          "url": "../grade/list"},
@@ -54,7 +54,7 @@
                  "menuid": "5", "icon": "", "menuname": "学生信息管理",
                  "menus": [
                      {
-                         "menuid": "21",
+                         "menuid": "41",
                          "menuname": "学生列表",
                          "icon": "icon-user-student",
                          "url": "../student/list"
@@ -65,13 +65,13 @@
                  "menuid": "6", "icon": "", "menuname": "基础信息管理",
                  "menus": [
                      {
-                         "menuid": "41",
+                         "menuid": "51",
                          "menuname": "年级列表",
                          "icon": "icon-world",
                          "url": "GradeServlet?method=toGradeListView"
                      },
                      {
-                         "menuid": "42",
+                         "menuid": "62",
                          "menuname": "班级列表",
                          "icon": "icon-house",
                          "url": "ClazzServlet?method=toClazzListView"
@@ -88,7 +88,7 @@
                  "menuid": "7", "icon": "", "menuname": "系统管理",
                  "menus": [
                      {
-                         "menuid": "51",
+                         "menuid": "61",
                          "menuname": "系统设置",
                          "icon": "icon-set",
                          "url": "SystemServlet?method=toAdminPersonalView"
