@@ -1,18 +1,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>年级列表</title>
-	<link rel="stylesheet" type="text/css" href="/easyui/themes/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="/easyui/themes/icon.css">
-	<link rel="stylesheet" type="text/css" href="/easyui/css/demo.css">
-	<script type="text/javascript" src="/easyui/jquery.min.js"></script>
-	<script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="/easyui/js/validateExtends.js"></script>
-	<script type="text/javascript">
-		var gradeName=${gradeJSON};
+    <meta charset="UTF-8">
+    <title>年级列表</title>
+    <link rel="stylesheet" type="text/css" href="/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="/easyui/css/demo.css">
+    <script type="text/javascript" src="/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/easyui/js/validateExtends.js"></script>
+    <script type="text/javascript">
+        var gradeName =${gradeJSON};
 
         $(function () {
             var table;
@@ -34,16 +34,18 @@
                 columns: [[
                     {field: 'chk', checkbox: true, width: 50},
                     {field: 'id', title: 'ID', width: 50, sortable: true},
-                    {field: 'name', title: '班级名称', width: 100},
-                    {field: 'gradeId', title: '所属年级', width: 150,
+                    {field: 'name', title: '班级名称', width: 150, sortable: true},
+                    {
+                        field: 'gradeId', title: '所属年级', width: 150,
                         formatter: function (value) {
                             for (i = 0; i < gradeName.length; i++) {
                                 if (gradeName[i].id == value) {
                                     return gradeName[i].name;
                                 }
-							}
+                            }
                             return value;
-                        }},
+                        }
+                    },
                     {field: 'remark', title: '备注', width: 200},
                     /*{field: 'number', title: '班级人数', width: 100},
                     {field: 'coordinator', title: '班主任姓名', width: 150},
@@ -102,12 +104,12 @@
                                 data: {ids: ids},
                                 dataType: 'json',
                                 success: function (data) {
-                                    if (data.success) {
+                                    if (data.type == "success") {
                                         $.messager.alert("消息提醒", "删除成功啦!", "info");
                                         $("#dataList").datagrid("reload");//刷新表格
                                         $("#dataList").datagrid("uncheckAll");//取消勾选当前页所有的行
                                     } else {
-                                        $.messager.alert("消息提醒", "服务器端发生异常! 删除失败!", "warning");
+                                        $.messager.alert("消息提醒", data.msg, "warning");
                                     }
                                 }
                             });
@@ -120,7 +122,7 @@
             $("#addDialog").dialog({
                 title: "添加班级信息窗口",
                 width: 430,
-                height: 460,
+                height: 410,
                 iconCls: "icon-house",
                 modal: true,
                 collapsible: false,
@@ -164,6 +166,7 @@
                         iconCls: 'icon-reload',
                         handler: function () {
                             $("#add_name").textbox('setValue', "");
+                            $("#add_remark").textbox('setValue', "");
                             // $("#add_number").textbox('setValue', "");
                             // $("#add_coordinator").textbox('setValue', "");
                             // $("#add_email").textbox('setValue', "");
@@ -178,7 +181,7 @@
             $("#editDialog").dialog({
                 title: "修改班级信息窗口",
                 width: 430,
-                height: 460,
+                height: 410,
                 iconCls: "icon-house",
                 modal: true,
                 collapsible: false,
@@ -264,7 +267,7 @@
 
         });
 
-	</script>
+    </script>
 </head>
 <body>
 
@@ -273,169 +276,171 @@
 
 <!-- 工具栏 -->
 <div id="toolbar">
-	<div style="float: left;"><a id="add" href="javascript:" class="easyui-linkbutton"
-								 data-options="iconCls:'icon-add',plain:true">添加</a></div>
-	<div style="float: left;" class="datagrid-btn-separator"></div>
-	<div style="float: left;"><a id="edit" href="javascript:" class="easyui-linkbutton"
-								 data-options="iconCls:'icon-edit',plain:true">修改</a></div>
-	<div style="float: left;" class="datagrid-btn-separator"></div>
-	<div style="float: left;"><a id="delete" href="javascript:" class="easyui-linkbutton"
-								 data-options="iconCls:'icon-some-delete',plain:true">删除</a></div>
+    <div style="float: left;"><a id="add" href="javascript:" class="easyui-linkbutton"
+                                 data-options="iconCls:'icon-add',plain:true">添加</a></div>
+    <div style="float: left;" class="datagrid-btn-separator"></div>
+    <div style="float: left;"><a id="edit" href="javascript:" class="easyui-linkbutton"
+                                 data-options="iconCls:'icon-edit',plain:true">修改</a></div>
+    <div style="float: left;" class="datagrid-btn-separator"></div>
+    <div style="float: left;"><a id="delete" href="javascript:" class="easyui-linkbutton"
+                                 data-options="iconCls:'icon-some-delete',plain:true">删除</a></div>
 
-	<!-- 年级与班级名搜索域 -->
-	<div style="margin-left: 10px;">
-		<div style="float: left;" class="datagrid-btn-separator"></div>
-		<a href="javascript:" class="easyui-linkbutton"
-		   data-options="iconCls:'icon-grade',plain:true">年级名称</a>
-		<select id="search-gradename" style="width: 155px;" class="easyui-combobox"
-				name="gradename">
-			<option value="">未选择年级</option>
-			<c:forEach items="${gradeList}" var="grade">
-				<option value="${grade.id}">${grade.name}</option>
-			</c:forEach>
-		</select>
-		<a href="javascript:" class="easyui-linkbutton"
-		   data-options="iconCls:'icon-class',plain:true">班级名称</a>
-		<input id="search-clazzname" class="easyui-textbox" name="clazzname"/>
-		<!-- 搜索按钮 -->
-		<a id="search-btn" href="javascript:" class="easyui-linkbutton"
-		   data-options="iconCls:'icon-search',plain:true">搜索</a>
-	</div>
+    <!-- 年级与班级名搜索域 -->
+    <div style="margin-left: 10px;">
+        <div style="float: left;" class="datagrid-btn-separator"></div>
+        <a href="javascript:" class="easyui-linkbutton"
+           data-options="iconCls:'icon-grade',plain:true">年级名称</a>
+        <select id="search-gradename" style="width: 155px;" class="easyui-combobox"
+                name="gradename">
+            <option value="">未选择年级</option>
+            <c:forEach items="${gradeList}" var="grade">
+                <option value="${grade.id}">${grade.name}</option>
+            </c:forEach>
+        </select>
+        <a href="javascript:" class="easyui-linkbutton"
+           data-options="iconCls:'icon-class',plain:true">班级名称</a>
+        <input id="search-clazzname" class="easyui-textbox" name="clazzname"/>
+        <!-- 搜索按钮 -->
+        <a id="search-btn" href="javascript:" class="easyui-linkbutton"
+           data-options="iconCls:'icon-search',plain:true">搜索</a>
+    </div>
 </div>
 
 <!-- 添加信息窗口 -->
 <div id="addDialog" style="padding: 25px 0 0 55px;">
-	<form id="addForm" method="post" action="#">
-		<table id="addTable" style="border-collapse:separate; border-spacing:0 3px;" cellpadding="6">
-			<tr>
-				<td>班级名称</td>
-				<td colspan="1">
-					<input id="add_name" style="width: 200px; height: 30px;" class="easyui-textbox"
-						   type="text" name="name" data-options="required:true, missingMessage:'请填写班级名哟~'"/>
-				</td>
-			</tr>
-			<tr>
-				<td>所属年级</td>
-				<td colspan="1">
-					<select id="add_gradeId" style="width: 200px; height: 30px;" class="easyui-combobox"
-							name="gradeId" data-options="required:true, missingMessage:'请选择所属年级哟~'">
-						<c:forEach items="${gradeList}" var="grade">
-							<option value="${grade.id}">${grade.name}</option>
-						</c:forEach>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td>备注:</td>
-				<td><input id="add_remark" style="width: 200px; height: 180px;" class="easyui-textbox" type="text" name="remark" data-options="multiline:true"  /></td>
-			</tr>
-			<%--<tr>
-				<td>班主任</td>
-				<td colspan="1"><input id="add_coordinator" style="width: 200px; height: 30px;" class="easyui-textbox"
-									   type="text" name="coordinator"
-									   data-options="required:true, missingMessage:'请填写主任姓名哟~'"/>
-				</td>
-			</tr>
-			<tr>
-				<td>班级人数</td>
-				<td colspan="1">
-					<input id="add_number" style="width: 200px; height: 30px;" class="easyui-textbox"
-						   type="text" name="number" validType="number"
-						   data-options="required:true, missingMessage:'请填写班级人数哟~'"/>
-				</td>
-			</tr>
-			<tr>
-				<td>班主任邮箱</td>
-				<td colspan="1"><input id="add_email" style="width: 200px; height: 30px;" class="easyui-textbox"
-									   type="text" name="email" validType="email"
-									   data-options="required:true, missingMessage:'请填写邮箱地址哟~'"/>
-				</td>
-			</tr>
-			<tr>
-				<td>班主任电话</td>
-				<td colspan="4"><input id="add_telephone" style="width: 200px; height: 30px;" class="easyui-textbox"
-									   type="text" name="telephone" validType="mobile"
-									   data-options="required:true, missingMessage:'请填写联系方式哟~'"/>
-				</td>
-			</tr>
-			<tr>
-				<td>班级介绍</td>
-				<td colspan="4"><input id="add_introduation" style="width: 200px; height: 60px;" class="easyui-textbox"
-									   type="text" name="introducation"
-									   data-options="multiline:true,required:true, missingMessage:'班级介绍不能为空呦~'"/>
-				</td>
-			</tr>--%>
-		</table>
-	</form>
+    <form id="addForm" method="post" action="#">
+        <table id="addTable" style="border-collapse:separate; border-spacing:0 3px;" cellpadding="6">
+            <tr>
+                <td>班级名称</td>
+                <td colspan="1">
+                    <input id="add_name" style="width: 200px; height: 30px;" class="easyui-textbox"
+                           type="text" name="name" data-options="required:true, missingMessage:'请填写班级名哟~'"/>
+                </td>
+            </tr>
+            <tr>
+                <td>所属年级</td>
+                <td colspan="1">
+                    <select id="add_gradeId" style="width: 200px; height: 30px;" class="easyui-combobox"
+                            name="gradeId" data-options="required:true, missingMessage:'请选择所属年级哟~'">
+                        <c:forEach items="${gradeList}" var="grade">
+                            <option value="${grade.id}">${grade.name}</option>
+                        </c:forEach>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>备注:</td>
+                <td><input id="add_remark" style="width: 200px; height: 180px;" class="easyui-textbox" type="text"
+                           name="remark" data-options="multiline:true"/></td>
+            </tr>
+            <%--<tr>
+                <td>班主任</td>
+                <td colspan="1"><input id="add_coordinator" style="width: 200px; height: 30px;" class="easyui-textbox"
+                                       type="text" name="coordinator"
+                                       data-options="required:true, missingMessage:'请填写主任姓名哟~'"/>
+                </td>
+            </tr>
+            <tr>
+                <td>班级人数</td>
+                <td colspan="1">
+                    <input id="add_number" style="width: 200px; height: 30px;" class="easyui-textbox"
+                           type="text" name="number" validType="number"
+                           data-options="required:true, missingMessage:'请填写班级人数哟~'"/>
+                </td>
+            </tr>
+            <tr>
+                <td>班主任邮箱</td>
+                <td colspan="1"><input id="add_email" style="width: 200px; height: 30px;" class="easyui-textbox"
+                                       type="text" name="email" validType="email"
+                                       data-options="required:true, missingMessage:'请填写邮箱地址哟~'"/>
+                </td>
+            </tr>
+            <tr>
+                <td>班主任电话</td>
+                <td colspan="4"><input id="add_telephone" style="width: 200px; height: 30px;" class="easyui-textbox"
+                                       type="text" name="telephone" validType="mobile"
+                                       data-options="required:true, missingMessage:'请填写联系方式哟~'"/>
+                </td>
+            </tr>
+            <tr>
+                <td>班级介绍</td>
+                <td colspan="4"><input id="add_introduation" style="width: 200px; height: 60px;" class="easyui-textbox"
+                                       type="text" name="introducation"
+                                       data-options="multiline:true,required:true, missingMessage:'班级介绍不能为空呦~'"/>
+                </td>
+            </tr>--%>
+        </table>
+    </form>
 </div>
 
 
 <!-- 修改信息窗口 -->
 <div id="editDialog" style="padding: 20px 0 0 65px">
-	<form id="editForm" method="post" action="#">
-		<!-- 获取被修改信息的班级id -->
-		<input type="hidden" id="edit_id" name="id"/>
-		<table id="editTable" style="border-collapse:separate; border-spacing:0 3px;" cellpadding="6">
-			<tr>
-				<td>班级名称</td>
-				<td><input id="edit_name" style="width: 200px; height: 30px;" class="easyui-textbox" type="text"
-						   name="name" data-options="required:true, missingMessage:'请填写班级姓名哟~'"/>
-				</td>
-			</tr>
-			<tr>
-				<td>所属年级</td>
-				<td colspan="1">
-					<select id="edit_gradeId" style="width: 200px; height: 30px;" class="easyui-combobox"
-							name="gradeId" data-options="missingMessage:'请选择所属年级哟~'">
-						<c:forEach items="${gradeList}" var="grade">
-							<option value="${grade.id}">${grade.name}</option>
-						</c:forEach>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td>备注:</td>
-				<td><input id="edit_remark" style="width: 200px; height: 180px;" class="easyui-textbox" type="text" name="remark" data-options="multiline:true"  /></td>
-			</tr>
-			<%--<tr>
-				<td>班级人数</td>
-				<td colspan="1">
-					<input id="edit_number" style="width: 200px; height: 30px;" class="easyui-textbox"
-						   type="text" name="number" validType="number"
-						   data-options="required:true, missingMessage:'请填写班级人数哟~'"/>
-				</td>
-			</tr>
-			<tr>
-				<td>班级主任</td>
-				<td colspan="4"><input id="edit_coordinator" style="width: 200px; height: 30px;" class="easyui-textbox"
-									   type="text" name="coordinator"
-									   data-options="required:true, missingMessage:'请填写班级主任姓名哟~'"/>
-				</td>
-			</tr>
-			<tr>
-				<td>主任邮箱</td>
-				<td colspan="4"><input id="edit_email" style="width: 200px; height: 30px;" class="easyui-textbox"
-									   type="text" name="email" validType="email"
-									   data-options="required:true, missingMessage:'请填写邮箱地址哟~'"/>
-				</td>
-			</tr>
-			<tr>
-				<td>主任电话</td>
-				<td><input id="edit_telephone" style="width: 200px; height: 30px;" class="easyui-textbox" type="text"
-						   name="telephone" validType="mobile"
-						   data-options="required:true, missingMessage:'请填写联系方式哟~'"/>
-				</td>
-			</tr>
-			<tr>
-				<td>班级介绍</td>
-				<td colspan="4"><input id="edit_introducation" style="width: 200px; height: 60px;"
-									   class="easyui-textbox"
-									   type="text" name="introducation"
-									   data-options="multiline:true,required:true, missingMessage:'班级介绍不能为空呦~'"/>
-				</td>
-			</tr>--%>
-		</table>
-	</form>
+    <form id="editForm" method="post" action="#">
+        <!-- 获取被修改信息的班级id -->
+        <input type="hidden" id="edit_id" name="id"/>
+        <table id="editTable" style="border-collapse:separate; border-spacing:0 3px;" cellpadding="6">
+            <tr>
+                <td>班级名称</td>
+                <td><input id="edit_name" style="width: 200px; height: 30px;" class="easyui-textbox" type="text"
+                           name="name" data-options="required:true, missingMessage:'请填写班级姓名哟~'"/>
+                </td>
+            </tr>
+            <tr>
+                <td>所属年级</td>
+                <td colspan="1">
+                    <select id="edit_gradeId" style="width: 200px; height: 30px;" class="easyui-combobox"
+                            name="gradeId" data-options="missingMessage:'请选择所属年级哟~'">
+                        <c:forEach items="${gradeList}" var="grade">
+                            <option value="${grade.id}">${grade.name}</option>
+                        </c:forEach>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>备注:</td>
+                <td><input id="edit_remark" style="width: 200px; height: 180px;" class="easyui-textbox" type="text"
+                           name="remark" data-options="multiline:true"/></td>
+            </tr>
+            <%--<tr>
+                <td>班级人数</td>
+                <td colspan="1">
+                    <input id="edit_number" style="width: 200px; height: 30px;" class="easyui-textbox"
+                           type="text" name="number" validType="number"
+                           data-options="required:true, missingMessage:'请填写班级人数哟~'"/>
+                </td>
+            </tr>
+            <tr>
+                <td>班级主任</td>
+                <td colspan="4"><input id="edit_coordinator" style="width: 200px; height: 30px;" class="easyui-textbox"
+                                       type="text" name="coordinator"
+                                       data-options="required:true, missingMessage:'请填写班级主任姓名哟~'"/>
+                </td>
+            </tr>
+            <tr>
+                <td>主任邮箱</td>
+                <td colspan="4"><input id="edit_email" style="width: 200px; height: 30px;" class="easyui-textbox"
+                                       type="text" name="email" validType="email"
+                                       data-options="required:true, missingMessage:'请填写邮箱地址哟~'"/>
+                </td>
+            </tr>
+            <tr>
+                <td>主任电话</td>
+                <td><input id="edit_telephone" style="width: 200px; height: 30px;" class="easyui-textbox" type="text"
+                           name="telephone" validType="mobile"
+                           data-options="required:true, missingMessage:'请填写联系方式哟~'"/>
+                </td>
+            </tr>
+            <tr>
+                <td>班级介绍</td>
+                <td colspan="4"><input id="edit_introducation" style="width: 200px; height: 60px;"
+                                       class="easyui-textbox"
+                                       type="text" name="introducation"
+                                       data-options="multiline:true,required:true, missingMessage:'班级介绍不能为空呦~'"/>
+                </td>
+            </tr>--%>
+        </table>
+    </form>
 </div>
 </body>
 </html>

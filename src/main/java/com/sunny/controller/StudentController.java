@@ -5,6 +5,7 @@ import com.sunny.entity.Clazz;
 import com.sunny.entity.Grade;
 import com.sunny.service.ClazzService;
 import com.sunny.service.GradeService;
+import com.sunny.util.UploadFile;
 import net.sf.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.text.Collator;
 import java.util.*;
 
@@ -24,11 +28,11 @@ import java.util.*;
  * @author: fang
  * @Date: 2019/8/22
  *
- * 班级信息管理
+ * 学生信息管理
  */
 @Controller
-@RequestMapping("/clazz")
-public class ClazzController {
+@RequestMapping("/student")
+public class StudentController {
 
 
     @Autowired
@@ -37,21 +41,25 @@ public class ClazzController {
     @Autowired
     private ClazzService clazzService;
 
+
     /**
-     * 班级列表页
+     * 学生列表页
      * @param modelAndView
      * @return
      */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public ModelAndView list(ModelAndView modelAndView){
-        modelAndView.setViewName("clazz/clazz_list");
-        List<Grade> all = gradeService.findAll();
-        Collections.sort(all, (Comparator<Grade>) (o1, o2) -> {
+        modelAndView.setViewName("student/student_list");
+        List<Grade> grades = gradeService.findAll();
+        List<Clazz> clazzes = clazzService.findAll();
+        //将list按照名字进行排序
+        Collections.sort(clazzes, (o1, o2) -> {
             Collator collator = Collator.getInstance(Locale.CHINA);
             return collator.compare(o1.getName(), o2.getName());
         });
-        modelAndView.addObject("gradeList", all);
-        modelAndView.addObject("gradeJSON", JSONArray.fromObject(all));
+        modelAndView.addObject("clazzList", clazzes);
+        modelAndView.addObject("clazzJSON", JSONArray.fromObject(clazzes));
+        modelAndView.addObject("gradeList", grades);
         return modelAndView;
     }
 
@@ -68,7 +76,7 @@ public class ClazzController {
     }
 
     /**
-     * 获取用户列表和模糊查询
+     * 获取学生列表和模糊查询
      * @param name
      * @param pageDTO
      * @return
@@ -80,7 +88,7 @@ public class ClazzController {
             @RequestParam(value = "gradeId", required = false)Integer gradeId,
             PageDTO pageDTO) {
         HashMap<String, Object> hashMap = new HashMap<>();
-        HashMap<String, Object> queryMap = new HashMap<>();
+        Map<String, Object> queryMap = new HashMap<>();
         queryMap.put("name", "%" + name + "%");
         if (gradeId != null) {
             //根据年级Id查询
@@ -94,17 +102,74 @@ public class ClazzController {
     }
 
     /**
+     * t图片上传
+     *
+     * @param filePhoto
+     * @return
+     */
+    @RequestMapping(value = "/upload_Photo", method = RequestMethod.POST)
+    public Map<String, String> uploadPhoto(MultipartFile filePhoto,
+                                           HttpServletRequest request,
+                                           HttpServletResponse response) {
+
+        HashMap<String, String> hashMap = new HashMap<>();
+        response.setCharacterEncoding("UTF-8");
+        if (filePhoto == null) {
+            hashMap.put("type","error");
+            hashMap.put("msg", "请选择文件");
+            return hashMap;
+        }
+        int maxSize = 10485760;
+        if (filePhoto.getSize() > maxSize) {
+            hashMap.put("type","error");
+            hashMap.put("msg", "文件太大了请重试");
+            return hashMap;
+        }
+        String suffix = filePhoto.getOriginalFilename().substring(filePhoto.
+                getOriginalFilename().lastIndexOf(".") + 1, filePhoto.getOriginalFilename().length());
+        // 限制上传的文件类型
+        String fileType = "jpg,png,jpeg,gif";
+        if (!fileType.contains(suffix.toLowerCase())) {
+            hashMap.put("type","error");
+            hashMap.put("msg", "文件格式不正确，请请重新上传");
+            return hashMap;
+        }
+        String savePath = request.getServletContext().getRealPath("/")+"\\upload\\";
+        System.out.println(savePath);
+        hashMap.put("type","success");
+        hashMap.put("msg", "上传成功");
+        return hashMap;
+    }
+
+    /**
+     * 上传图片
+     * @param photo
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/uploadPhoto", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> uploadPhoto(MultipartFile photo, HttpServletRequest request) {
+        //保存在target包下的项目目录下
+        final String dirPath = request.getServletContext().getRealPath("/upload/student_portrait/");
+        //存储头像的项目发布目录
+        final String portraitPath = request.getServletContext().getContextPath() + "/upload/student_portrait/";
+        //返回头像的上传结果
+        return UploadFile.getUploadResult(photo, dirPath, portraitPath, request);
+    }
+
+    /**
      * 添加
      * @param clazz
      * @return
      */
-    @RequestMapping(value = "/addClazz", method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
     public Map<String,String> add(Clazz clazz) {
         HashMap<String, String> hashMap = new HashMap<>();
         if (StringUtils.isEmpty(clazz.getName())) {
             hashMap.put("type","error");
-            hashMap.put("msg", "班级名称不能为空");
+            hashMap.put("msg", "学生名称不能为空");
             return hashMap;
         }
         if (clazz.getGradeId() == null) {
@@ -130,7 +195,7 @@ public class ClazzController {
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     @ResponseBody
     public Map<String,String> edit(Clazz clazz) {
-        Map<String, String> hashMap = new HashMap<>();
+        HashMap<String, String> hashMap = new HashMap<>();
         if (StringUtils.isEmpty(clazz.getName())) {
             hashMap.put("type","error");
             hashMap.put("msg", "名称不能为空");
@@ -152,7 +217,7 @@ public class ClazzController {
     }
 
     /**
-     * 班级信息删除
+     * 学生信息删除
      * @param ids
      * @return
      */
@@ -181,7 +246,7 @@ public class ClazzController {
             }
         } catch (Exception e) {
             map.put("type", "error");
-            map.put("msg", "该班级下存在学生信息，请勿冲动");
+            map.put("msg", "该学生下存在学生信息，请勿冲动");
             return map;
         }
 

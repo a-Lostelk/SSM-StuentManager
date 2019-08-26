@@ -50,6 +50,10 @@ public interface GradeDao {
      */
     int delete(String ids);
 
-    public List<Grade> findAll();
+    /**
+     * 查询所有
+     * @return
+     */
+    List<Grade> findAll();
 
 }

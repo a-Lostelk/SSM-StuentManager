@@ -1,6 +1,7 @@
 package com.sunny.service.impl;
 
 import com.sunny.dao.UserDao;
+import com.sunny.entity.Clazz;
 import com.sunny.entity.User;
 import com.sunny.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

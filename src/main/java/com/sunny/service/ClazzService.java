@@ -48,4 +48,10 @@ public interface ClazzService {
      * @return
      */
     int delete(String ids);
+
+    /**
+     * 查询所有
+     * @return
+     */
+    List<Clazz> findAll();
 }

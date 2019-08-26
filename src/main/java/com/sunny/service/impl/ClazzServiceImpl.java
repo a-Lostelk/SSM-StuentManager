@@ -46,4 +46,9 @@ public class ClazzServiceImpl implements ClazzService {
     public int delete(String ids) {
         return clazzDao.delete(ids);
     }
+
+    @Override
+    public List<Clazz> findAll() {
+        return clazzDao.findAll();
+    }
 }

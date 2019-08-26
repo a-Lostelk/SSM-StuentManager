@@ -54,6 +54,7 @@ public interface ClazzDao {
 
     /**
      * 查询所有
+     * @return
      */
     List<Clazz> findAll();
 
