@@ -3,7 +3,6 @@ package com.sunny.util;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -67,8 +66,7 @@ public class UploadFile {
      */
     public static Map<String, Object> getUploadResult(MultipartFile photo,
                                                       String dirPath,
-                                                      String uploadPath,
-                                                      HttpServletRequest request) {
+                                                      String uploadPath) {
 
         if (!photo.isEmpty() && photo.getSize() > 0) {
             String originalFilename = photo.getOriginalFilename();
@@ -81,10 +79,11 @@ public class UploadFile {
             //将上传的文件保存到目标目录下
             try {
                 photo.transferTo(new File(dirPath + newPhotoName));
+                String substring = dirPath.substring(dirPath.length() - 16);
                 upload_result.put("type", "success");
                 upload_result.put("msg", "上传成功");
                 //将存储头像的项目路径返回给页面
-                upload_result.put("uploadPath",request.getContextPath() + uploadPath + newPhotoName);
+                upload_result.put("uploadPath", uploadPath +  newPhotoName);
             } catch (IOException e) {
                 e.printStackTrace();
                 upload_result.put("type", "error");
@@ -93,8 +92,8 @@ public class UploadFile {
             }
 
         } else {
-            upload_result.put("success", false);
-            upload_result.put("msg", "头像上传失败! 未找到指定图片!");
+            upload_result.put("type", "error");
+            upload_result.put("msg", "头像上传失败! 请选择图片!");
             return upload_result;
         }
         return upload_result;

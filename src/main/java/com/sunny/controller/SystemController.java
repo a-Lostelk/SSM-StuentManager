@@ -1,14 +1,17 @@
 package com.sunny.controller;
 
-import com.sunny.dto.LoginParamDTO;
+import com.sunny.entity.Student;
 import com.sunny.entity.User;
+import com.sunny.service.StudentService;
 import com.sunny.service.UserService;
 import com.sunny.util.CpachaUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.imageio.ImageIO;
@@ -34,6 +37,9 @@ public class SystemController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private StudentService studentService;
+
     @RequestMapping(value = "/index",method = RequestMethod.GET)
     public String index(){
          return "admin/admin";
@@ -46,17 +52,17 @@ public class SystemController {
     }
 
     /**
-     *
      * @param request
      * @return
      */
     @ResponseBody
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public Map<String, String> login(@RequestParam(value="username",required=true) String username,
-                                     @RequestParam(value="password",required=true) String password,
-                                     @RequestParam(value="vcode",required=true) String vcode,
-                                     @RequestParam(value="type",required=true) int type,
+    public Map<String, String> login(@RequestParam(value = "username", required = true) String username,
+                                     @RequestParam(value = "password", required = true) String password,
+                                     @RequestParam(value = "vcode", required = true) String vcode,
+                                     @RequestParam(value = "type", required = true) int type,
                                      HttpServletRequest request) {
+
         HashMap<String, String> hashMap = new HashMap<>();
         if (StringUtils.isEmpty(username)) {
             hashMap.put("type", "error");
@@ -90,8 +96,9 @@ public class SystemController {
         //释放session空间
         request.getSession().setAttribute("loginCpacha", null);
 
-        int studentType = 2;
+        //登录级别
         int adminType = 1;
+        int studentType = 2;
         //管理员
         if (type == adminType) {
             //从数据库中查找用户
@@ -108,10 +115,21 @@ public class SystemController {
             }
             request.getSession().setAttribute("userInfo", user);
         }
-//        //管理员登录
-//        if (loginParamDTO.getType() == 1) {
-//
-//        }
+        if (type == studentType) {
+            Student student = studentService.findByStudentName(username);
+            if (student == null) {
+                hashMap.put("type", "error");
+                hashMap.put("msg", "该学生不存在");
+                return hashMap;
+            }
+            if (!password.equals(student.getPassword())) {
+                hashMap.put("type", "error");
+                hashMap.put("msg", "密码不正确");
+                return hashMap;
+            }
+            request.getSession().setAttribute("userInfo", student);
+        }
+        request.getSession().setAttribute("userType", type);
         hashMap.put("type", "success");
         hashMap.put("msg", "登录成功");
         return hashMap;

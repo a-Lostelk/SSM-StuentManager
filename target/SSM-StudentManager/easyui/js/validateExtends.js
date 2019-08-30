@@ -1,7 +1,6 @@
 /**
  * 扩展easyui表单的验证
  */
-
 $.extend($.fn.validatebox.defaults.rules, {
     //验证汉字
     CHS: {
@@ -30,20 +29,20 @@ $.extend($.fn.validatebox.defaults.rules, {
 	repeat: {
 		validator: function (value) {
 			var flag = true;
-			$.ajax({
-				type: "post",
-				async: false,
-				url: "SystemServlet?method=AllAccount&t="+new Date().getTime(),
-				success: function(data){//在验证函数里加载数据，加载过来后判断输入的值
-					var account = $.parseJSON(data);
-		            for(var i=0;i < account.length;i++){
-		            	if(value == account[i]){
-		            		flag = false;
-		            		break;
-		            	}
-		            }
-				}
-			});
+            $.ajax({
+                type: "post",
+                async: false,
+                url: "SystemServlet?method=AllAccount&t=" + new Date().getTime(),
+                success: function (data) {//在验证函数里加载数据，加载过来后判断输入的值
+                    var account = $.parseJSON(data);
+                    for (var i = 0; i < account.length; i++) {
+                        if (value == account[i]) {
+                            flag = false;
+                            break;
+                        }
+                    }
+                }
+            });
 			return flag;
 	    },
 	    message: '用户已存在'
@@ -53,20 +52,20 @@ $.extend($.fn.validatebox.defaults.rules, {
 	repeat_course: {
 		validator: function (value) {
 			var flag = true;
-			$.ajax({
-				type: "post",
-				async: false,
-				url: "CourseServlet?method=CourseList&t="+new Date().getTime(),
-				success: function(data){//在验证函数里加载数据，加载过来后判断输入的值
-					var course = $.parseJSON(data);
-		            for(var i=0;i < course.length;i++){
-		            	if(value == course[i].name){
-		            		flag = false;
-		            		break;
-		            	}
-		            }
-				}
-			});
+            $.ajax({
+                type: "post",
+                async: false,
+                url: "CourseServlet?method=CourseList&t=" + new Date().getTime(),
+                success: function (data) {//在验证函数里加载数据，加载过来后判断输入的值
+                    var course = $.parseJSON(data);
+                    for (var i = 0; i < course.length; i++) {
+                        if (value == course[i].name) {
+                            flag = false;
+                            break;
+                        }
+                    }
+                }
+            });
 			return flag;
 	    },
 	    message: '课程名称已存在'

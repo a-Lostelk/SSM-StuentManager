@@ -33,8 +33,7 @@
                 remoteSort: false,
                 columns: [[
                     {field: 'chk', checkbox: true, width: 50},
-                    {field: 'id', title: 'ID', width: 50, sortable: true},
-                    {field: 'name', title: '班级名称', width: 150, sortable: true},
+                    {field: 'id', title: 'ID', width: 50, sortable: true},{field: 'name', title: '班级名称', width: 150, sortable: true},
                     {
                         field: 'gradeId', title: '所属年级', width: 150,
                         formatter: function (value) {
@@ -299,10 +298,9 @@
         </select>
         <a href="javascript:" class="easyui-linkbutton"
            data-options="iconCls:'icon-class',plain:true">班级名称</a>
-        <input id="search-clazzname" class="easyui-textbox" name="clazzname"/>
         <!-- 搜索按钮 -->
-        <a id="search-btn" href="javascript:" class="easyui-linkbutton"
-           data-options="iconCls:'icon-search',plain:true">搜索</a>
+        <input id="search-clazzname" class="easyui-textbox" name="clazzname"/>
+        <a id="search-btn" href="javascript:" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">搜索</a>
     </div>
 </div>
 

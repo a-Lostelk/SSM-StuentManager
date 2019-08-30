@@ -36,4 +36,8 @@ public class TestClass {
             System.out.println(iterator.next());
         }
     }
+
+    @Test
+    public void test(){
+    }
 }

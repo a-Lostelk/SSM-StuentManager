@@ -1,7 +1,7 @@
-package com.sunny.service;
+package com.sunny.dao;
 
-import com.sunny.entity.Clazz;
-import org.springframework.stereotype.Service;
+import com.sunny.entity.Student;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
@@ -12,14 +12,16 @@ import java.util.Map;
  * @author: fang
  * @Date: 2019/8/22
  */
-@Service
-public interface ClazzService {
+@Repository
+public interface StudentDao {
+
+
     /**
      * 列表展示
      * @param map
      * @return
      */
-    List<Clazz> findList(Map<String, Object> map);
+    List<Student> findList(Map<String, Object> map);
 
     /**
      * 获取总记录数
@@ -30,17 +32,17 @@ public interface ClazzService {
 
     /**
      * 添加
-     * @param clazz
+     * @param student
      * @return
      */
-    int add(Clazz clazz);
+    int add(Student student);
 
     /**
      * 编辑
-     * @param clazz
+     * @param student
      * @return
      */
-    int edit(Clazz clazz);
+    int edit(Student student);
 
     /**
      * 删除一个或多个
@@ -53,5 +55,13 @@ public interface ClazzService {
      * 查询所有
      * @return
      */
-    List<Clazz> findAll();
+    List<Student> findAll();
+
+    /**
+     * 根据名字查找
+     * @param studentName
+     * @return
+     */
+    Student findByStudentName(String studentName);
+
 }

@@ -68,19 +68,19 @@
                          "menuid": "51",
                          "menuname": "年级列表",
                          "icon": "icon-world",
-                         "url": "GradeServlet?method=toGradeListView"
+                         "url": ""
                      },
                      {
                          "menuid": "62",
                          "menuname": "班级列表",
                          "icon": "icon-house",
-                         "url": "ClazzServlet?method=toClazzListView"
+                         "url": ""
                      },
                      {
                          "menuid": "43",
                          "menuname": "课程列表",
                          "icon": "icon-book-open",
-                         "url": "CourseServlet?method=toCourseListView"
+                         "url": ""
                      }
                  ]
              },
@@ -91,7 +91,7 @@
                          "menuid": "61",
                          "menuname": "系统设置",
                          "icon": "icon-set",
-                         "url": "SystemServlet?method=toAdminPersonalView"
+                         "url": ""
                      },
                  ]
              }
@@ -108,7 +108,7 @@
 	</noscript>
     <div region="north" split="true" border="false" style="overflow: hidden; height: 30px;background: #7f99be;
         line-height: 20px;color: #fff; font-family: Verdana, 微软雅黑,黑体">
-        <span style="float:right; padding-right:20px;" class="head"><span style="color:red; font-weight:bold;">${userInfo.username}&nbsp;</span>您好&nbsp;&nbsp;&nbsp;<a href="SystemServlet?method=LoginOut" id="loginOut">安全退出</a></span>
+        <span style="float:right; padding-right:20px;" class="head"><span style="color:red; font-weight:bold;">${userInfo.username}&nbsp;</span>您好&nbsp;&nbsp;&nbsp;<a href="" id="loginOut">安全退出</a></span>
         <span style="padding-left:10px; font-size: 16px; ">学生信息管理系统</span>
     </div>
     <div region="south" split="true" style="height: 30px; background: #D2E0F2; ">

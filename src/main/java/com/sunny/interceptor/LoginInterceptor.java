@@ -1,6 +1,5 @@
 package com.sunny.interceptor;
 
-import com.sunny.entity.User;
 import net.sf.json.JSONObject;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,9 +31,8 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
         String uri = request.getRequestURI();
-        User user = (User) request.getSession().getAttribute("userInfo");
         //用户未登录或登录失效
-        if (user == null) {
+        if (request.getSession().getAttribute("userInfo") == null) {
             System.out.println("error:用户未登录或登录失效" + uri);
             //获取请求头，ajax请求头会携带XMLHttpRequest参数
             String header = "XMLHttpRequest";

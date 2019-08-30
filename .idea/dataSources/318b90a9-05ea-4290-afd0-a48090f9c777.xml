@@ -997,30 +997,93 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="249" parent="234" name="PRIMARY">
+    <column id="249" parent="234" name="studentNumber">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="250" parent="234" name="studentName">
+      <Position>3</Position>
+      <DataType>varchar(25)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="251" parent="234" name="password">
+      <Position>4</Position>
+      <DataType>varchar(32)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="252" parent="234" name="sex">
+      <Position>5</Position>
+      <DataType>varchar(5)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="253" parent="234" name="phone">
+      <Position>6</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="254" parent="234" name="email">
+      <Position>7</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="255" parent="234" name="clazzId">
+      <Position>8</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="256" parent="234" name="gradeId">
+      <Position>9</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="257" parent="234" name="photo">
+      <Position>10</Position>
+      <DataType>varchar(128)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="258" parent="234" name="remark">
+      <Position>11</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="259" parent="234" name="clazzid">
+      <ColNames>clazzId</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="260" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="250" parent="235" name="id">
+    <foreign-key id="261" parent="234" name="clazzid">
+      <ColNames>clazzId</ColNames>
+      <RefSchemaName>db_student_manager</RefSchemaName>
+      <RefTableName>clazz</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="262" parent="235" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="235" name="username">
+    <column id="263" parent="235" name="username">
       <Position>2</Position>
       <DataType>varchar(32)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="235" name="password">
+    <column id="264" parent="235" name="password">
       <Position>3</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="253" parent="235" name="PRIMARY">
+    <key id="265" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
