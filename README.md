@@ -25,15 +25,18 @@ Go！Go！Go！
 
 #### 项目截图
 
+（基本页面功能都实现了，截取部分项目截图）
 - 登录页面（学生和管理员）
+
   ![](https://github.com/a-Lostelk/SSM-StuentManager/blob/master/Images/QQ%E6%88%AA%E5%9B%BE20190903085604.png)
   
-- 
 - 主页面
-- 管理员界面
-- 年级管理界面
-- 班级管理界面
+
+ ![](https://github.com/a-Lostelk/SSM-StuentManager/blob/master/Images/QQ%E6%88%AA%E5%9B%BE20190903085801.png)
+ 
 - 学生管理界面
+  分类查询
+ ![](https://github.com/a-Lostelk/SSM-StuentManager/blob/master/Images/QQ%E6%88%AA%E5%9B%BE20190910161543.png)
 
 
 
