@@ -7,27 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec429264-8396-42a2-84c5-a18f99bb50b0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sunny/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sunny/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sunny/controller/SystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sunny/controller/SystemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sunny/entity/Clazz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sunny/entity/Clazz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sunny/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sunny/entity/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sunny/enums/LoginType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sunny/enums/LoginType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sunny/util/UploadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sunny/util/UploadFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mybatis/mapper/ClazzMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis/mapper/ClazzMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mybatis/mapper/StudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mybatis/mapper/StudentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/clazz/clazz_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/clazz/clazz_list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/grade/grade_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/grade/grade_list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/student/student_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/student/student_list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SSM-StudentManager/WEB-INF/classes/com/sunny/controller/SystemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SSM-StudentManager/WEB-INF/classes/com/sunny/controller/SystemController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SSM-StudentManager/WEB-INF/classes/config/mybatis/mapper/StudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/SSM-StudentManager/WEB-INF/classes/config/mybatis/mapper/StudentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SSM-StudentManager/WEB-INF/view/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SSM-StudentManager/WEB-INF/view/admin/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SSM-StudentManager/WEB-INF/view/student/student_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SSM-StudentManager/WEB-INF/view/student/student_list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sunny/controller/SystemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sunny/controller/SystemController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config/mybatis/mapper/StudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/mybatis/mapper/StudentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/QQ截图20190903090704.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -124,7 +105,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="0-SNAPSHOT" value="6" />
+          <entry key="0-SNAPSHOT" value="7" />
           <entry key="class" value="45" />
           <entry key="clazz" value="1" />
           <entry key="css" value="15" />
@@ -132,7 +113,7 @@
           <entry key="gif" value="3" />
           <entry key="gitignore" value="1" />
           <entry key="ico" value="1" />
-          <entry key="java" value="176" />
+          <entry key="java" value="177" />
           <entry key="jpg" value="14" />
           <entry key="js" value="16" />
           <entry key="jsp" value="88" />
@@ -141,7 +122,7 @@
           <entry key="properties" value="3" />
           <entry key="sql" value="1" />
           <entry key="student" value="1" />
-          <entry key="xml" value="59" />
+          <entry key="xml" value="60" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -152,14 +133,14 @@
           <entry key="Database Element" value="2" />
           <entry key="Git file" value="1" />
           <entry key="Image" value="45" />
-          <entry key="JAVA" value="176" />
+          <entry key="JAVA" value="177" />
           <entry key="JSP" value="88" />
           <entry key="JavaScript" value="16" />
           <entry key="Kotlin" value="1" />
           <entry key="Properties" value="3" />
           <entry key="Scratch" value="1" />
-          <entry key="UML" value="6" />
-          <entry key="XML" value="59" />
+          <entry key="UML" value="7" />
+          <entry key="XML" value="60" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -168,8 +149,8 @@
           <entry key="dummy" value="4" />
           <entry key="ft" value="45" />
           <entry key="java" value="10588" />
-          <entry key="js" value="4" />
-          <entry key="jsp" value="7387" />
+          <entry key="js" value="6" />
+          <entry key="jsp" value="7389" />
           <entry key="kt" value="62" />
           <entry key="properties" value="21" />
           <entry key="sql" value="12" />
@@ -181,8 +162,8 @@
         <counts>
           <entry key="CSS" value="57" />
           <entry key="JAVA" value="10588" />
-          <entry key="JSP" value="7385" />
-          <entry key="JavaScript" value="4" />
+          <entry key="JSP" value="7387" />
+          <entry key="JavaScript" value="6" />
           <entry key="Kotlin" value="62" />
           <entry key="PLAIN_TEXT" value="25" />
           <entry key="Properties" value="21" />
@@ -201,17 +182,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/student/student_list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/easyui/js/validateExtends.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2310">
-              <caret line="105" column="77" selection-start-line="105" selection-start-column="77" selection-end-line="105" selection-end-column="77" />
+            <state relative-caret-position="-3432">
+              <caret line="192" column="25" lean-forward="true" selection-start-line="192" selection-start-column="25" selection-end-line="192" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -219,8 +191,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sunny/controller/SystemController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2288">
-              <caret line="124" column="31" selection-start-line="124" selection-start-column="31" selection-end-line="124" selection-end-column="31" />
+            <state relative-caret-position="499">
+              <caret line="116" column="34" lean-forward="true" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sunny/interceptor/LoginInterceptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="713">
+              <caret line="46" column="75" selection-start-line="46" selection-start-column="62" selection-end-line="46" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -242,7 +223,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>validate</find>
       <find>gradeList</find>
       <find>photo_target</find>
       <find>portraitPath</find>
@@ -272,6 +252,7 @@
       <find>studentName</find>
       <find>uploadPhoto</find>
       <find>validType</find>
+      <find>userTy</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -441,6 +422,80 @@
               <item name="SSMStudentManager" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSMStudentManager" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SSMStudentManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMStudentManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMStudentManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMStudentManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMStudentManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMStudentManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMStudentManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMStudentManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sunny" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMStudentManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMStudentManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sunny" type="462c0819:PsiDirectoryNode" />
+              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMStudentManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMStudentManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMStudentManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMStudentManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMStudentManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMStudentManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMStudentManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMStudentManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMStudentManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMStudentManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -455,7 +510,7 @@
     <property name="ToolWindowDebug.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568101807908" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568109648079" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -644,7 +699,7 @@
       <workItem from="1568099669860" duration="2150000" />
       <workItem from="1568101958248" duration="100000" />
       <workItem from="1568102085551" duration="189000" />
-      <workItem from="1568102297924" duration="784000" />
+      <workItem from="1568102297924" duration="3291000" />
     </task>
     <servers />
   </component>
@@ -681,7 +736,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269756000" />
+    <option name="totallyTimeSpent" value="272263000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -706,14 +761,14 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32890856" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49649858" visible="true" weight="0.016200295" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49649858" weight="0.016200295" />
       <window_info anchor="bottom" x="22" y="328" width="1492" height="167" id="Debug" order="3" weight="0.20384048" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32765958" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.6067747" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.4992636" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5035014" side_tool="true" weight="0.13126844" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49719888" weight="0.005891016" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32907802" />
@@ -733,7 +788,7 @@
       <window_info anchor="right" id="Mybatis datasource" order="9" show_stripe_button="false" side_tool="true" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49905482" visible="true" weight="0.27297667" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49905482" visible="true" weight="0.21782842" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -750,7 +805,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32765958" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.6342183" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.4992636" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5035014" side_tool="true" weight="0.13126844" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49719888" weight="0.005891016" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32907802" />
@@ -763,7 +818,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.3297587" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32921812" />
       <window_info anchor="right" id="Database" order="6" weight="0.20083103" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -983,13 +1038,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sunny/interceptor/LoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="46" column="75" selection-start-line="46" selection-start-column="62" selection-end-line="46" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sunny/entity/Grade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -1039,32 +1087,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://MAVEN/com.sunny:SSM-StudentManager:1.0-SNAPSHOT">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MAVEN</ID>
-          <OriginalElement>com.sunny:SSM-StudentManager:1.0-SNAPSHOT</OriginalElement>
-          <nodes>
-            <node x="" y="">com.sunny:SSM-StudentManager:1.0-SNAPSHOT</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="321.0" y="15.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>All</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis/mapper/ClazzMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -1100,24 +1122,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sunny/controller/SystemController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/easyui/js/validateExtends.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2288">
-          <caret line="124" column="31" selection-start-line="124" selection-start-column="31" selection-end-line="124" selection-end-column="31" />
+        <state relative-caret-position="44">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
         </state>
       </provider>
+    </entry>
+    <entry file="uml://MAVEN/com.sunny:SSM-StudentManager:1.0-SNAPSHOT">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MAVEN</ID>
+          <OriginalElement>com.sunny:SSM-StudentManager:1.0-SNAPSHOT</OriginalElement>
+          <nodes>
+            <node x="" y="">com.sunny:SSM-StudentManager:1.0-SNAPSHOT</node>
+            <node x="" y="">junit:junit:jar:4.12</node>
+            <node x="" y="">org.aspectj:aspectjweaver:jar:1.8.9</node>
+            <node x="" y="">commons-logging:commons-logging:jar:1.2</node>
+            <node x="" y="">commons-lang:commons-lang:jar:2.3</node>
+            <node x="" y="">commons-io:commons-io:jar:2.4</node>
+            <node x="" y="">commons-fileupload:commons-fileupload:jar:1.3.1</node>
+            <node x="" y="">commons-fileupload:commons-fileupload:jar:1.3.1/commons-io:commons-io:jar:2.2</node>
+            <node x="" y="">commons-collections:commons-collections:jar:3.2.1</node>
+            <node x="" y="">commons-beanutils:commons-beanutils:jar:1.9.3</node>
+            <node x="" y="">commons-beanutils:commons-beanutils:jar:1.9.3/commons-collections:commons-collections:jar:3.2.2</node>
+            <node x="" y="">net.sf.ezmorph:ezmorph:jar:1.0.6</node>
+            <node x="" y="">org.springframework:spring-core:jar:4.3.9.RELEASE</node>
+            <node x="" y="">org.springframework:spring-aop:jar:4.3.9.RELEASE</node>
+            <node x="" y="">org.springframework:spring-aspects:jar:4.3.9.RELEASE</node>
+            <node x="" y="">org.springframework:spring-beans:jar:4.3.9.RELEASE</node>
+            <node x="" y="">org.springframework:spring-context:jar:4.3.9.RELEASE</node>
+            <node x="" y="">org.springframework:spring-expression:jar:4.3.9.RELEASE</node>
+            <node x="" y="">org.springframework:spring-test:jar:4.3.9.RELEASE</node>
+            <node x="" y="">org.springframework:spring-tx:jar:4.3.9.RELEASE</node>
+            <node x="" y="">org.springframework:spring-web:jar:4.3.9.RELEASE</node>
+            <node x="" y="">org.springframework:spring-webmvc:jar:4.3.9.RELEASE</node>
+            <node x="" y="">org.springframework:spring-jdbc:jar:4.3.9.RELEASE</node>
+            <node x="" y="">org.mybatis:mybatis:jar:3.4.4</node>
+            <node x="" y="">mysql:mysql-connector-java:jar:5.1.29</node>
+            <node x="" y="">c3p0:c3p0:jar:0.9.1.2</node>
+            <node x="" y="">org.mybatis.generator:mybatis-generator-core:jar:1.3.5</node>
+            <node x="" y="">org.mybatis:mybatis-spring:jar:1.3.1</node>
+            <node x="" y="">com.github.pagehelper:pagehelper:jar:5.0.3</node>
+            <node x="" y="">log4j:log4j:jar:1.2.12</node>
+            <node x="" y="">org.apache.logging.log4j:log4j-api:jar:2.11.2</node>
+            <node x="" y="">taglibs:standard:jar:1.1.2</node>
+            <node x="" y="">javax.servlet:javax.servlet-api:jar:3.1.0</node>
+            <node x="" y="">javax.servlet:jstl:jar:1.2</node>
+            <node x="" y="">com.fasterxml.jackson.core:jackson-databind:jar:2.9.9</node>
+            <node x="" y="">com.fasterxml.jackson.core:jackson-databind:jar:2.9.9/com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0</node>
+            <node x="" y="">com.fasterxml.jackson.core:jackson-core:jar:2.9.9</node>
+            <node x="" y="">com.fasterxml.jackson.core:jackson-annotations:jar:2.9.8</node>
+            <node x="" y="">net.sf.json-lib:json-lib:jar:jdk15:2.4</node>
+            <node x="" y="">net.sf.json-lib:json-lib:jar:jdk15:2.4/commons-beanutils:commons-beanutils:jar:1.8.0</node>
+            <node x="" y="">net.sf.json-lib:json-lib:jar:jdk15:2.4/commons-lang:commons-lang:jar:2.5</node>
+            <node x="" y="">net.sf.json-lib:json-lib:jar:jdk15:2.4/commons-logging:commons-logging:jar:1.1.1</node>
+            <node x="" y="">org.hamcrest:hamcrest-core:jar:1.3</node>
+            <node x="" y="">com.google.code.gson:gson:jar:2.8.5</node>
+            <node x="" y="">com.github.jsqlparser:jsqlparser:jar:1.0</node>
+            <node x="" y="">org.projectlombok:lombok:jar:1.16.18</node>
+            <node x="" y="">org.thymeleaf:thymeleaf:jar:3.0.10.RELEASE</node>
+            <node x="" y="">org.thymeleaf:thymeleaf:jar:3.0.10.RELEASE/ognl:ognl:jar:3.1.12</node>
+            <node x="" y="">org.thymeleaf:thymeleaf:jar:3.0.10.RELEASE/ognl:ognl:jar:3.1.12/org.javassist:javassist:jar:3.20.0-GA</node>
+            <node x="" y="">org.thymeleaf:thymeleaf:jar:3.0.10.RELEASE/org.attoparser:attoparser:jar:2.0.5.RELEASE</node>
+            <node x="" y="">org.thymeleaf:thymeleaf:jar:3.0.10.RELEASE/org.unbescape:unbescape:jar:1.1.6.RELEASE</node>
+            <node x="" y="">org.thymeleaf:thymeleaf:jar:3.0.10.RELEASE/org.slf4j:slf4j-api:jar:1.7.25</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.27323811753687677" x="1320.0098644597529" y="-64.19948456969291" />
+          <SelectedNodes />
+          <Categories />
+          <VISIBILITY>All</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="34" column="16" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/student/student_list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+        <state relative-caret-position="-3432">
+          <caret line="192" column="25" lean-forward="true" selection-start-line="192" selection-start-column="25" selection-end-line="192" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/easyui/js/validateExtends.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sunny/controller/SystemController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2310">
-          <caret line="105" column="77" selection-start-line="105" selection-start-column="77" selection-end-line="105" selection-end-column="77" />
+        <state relative-caret-position="499">
+          <caret line="116" column="34" lean-forward="true" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sunny/interceptor/LoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="46" column="75" selection-start-line="46" selection-start-column="62" selection-end-line="46" selection-end-column="75" />
         </state>
       </provider>
     </entry>
