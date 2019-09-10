@@ -44,8 +44,17 @@ Go！Go！Go！
 
 *（实际上，学生用户登录后的页面和管理员登录后页面是一致的，使用JSTL标签从session中获得登录用户的type判断是学生还是管理员，然后将某些操作的页面元素隐藏，学生用户不可视）*
 
-- 学生登录
+
+
 - 管理员登录
+
+![](https://github.com/a-Lostelk/SSM-StuentManager/blob/master/Images/QQ%E6%88%AA%E5%9B%BE20190910191722.png)
+
+- 学生登录
+
+ ![](https://github.com/a-Lostelk/SSM-StuentManager/blob/master/Images/QQ%E6%88%AA%E5%9B%BE20190910191902.png)
+
+
 
 
 #### 大致结构
