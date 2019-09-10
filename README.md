@@ -1,3 +1,5 @@
+ ## 学无止境，永不停息
+
 ### 项目介绍
 
 一个基于SSM的学生信息管理系统，由于本人尚在大二，实现功能有限，代码简陋，所幸基本的业务功能和前后端交互没有存在bug，有待深入继续学习
@@ -63,4 +65,3 @@ Go！Go！Go！
  ![](https://github.com/a-Lostelk/SSM-StuentManager/blob/master/Images/QQ%E6%88%AA%E5%9B%BE20190910180042.png)
  
  
- ## 学无止境，永不停息
