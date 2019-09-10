@@ -34,8 +34,8 @@ Go！Go！Go！
 
  ![](https://github.com/a-Lostelk/SSM-StuentManager/blob/master/Images/QQ%E6%88%AA%E5%9B%BE20190903085801.png)
  
-- 学生管理界面
-  分类查询
+- 学生管理界面（分类查询）
+ 
  ![](https://github.com/a-Lostelk/SSM-StuentManager/blob/master/Images/QQ%E6%88%AA%E5%9B%BE20190910161543.png)
 
 
@@ -48,5 +48,6 @@ Go！Go！Go！
 - 管理员登录
 
 
-
 #### 大致结构
+
+ ![]()
