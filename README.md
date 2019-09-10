@@ -52,6 +52,8 @@ Go！Go！Go！
 
 - 学生登录
 
+ 学生用户登录无法查看管理员列表和新增删除操作，但可以修改自身信息
+
  ![](https://github.com/a-Lostelk/SSM-StuentManager/blob/master/Images/QQ%E6%88%AA%E5%9B%BE20190910191902.png)
 
 
