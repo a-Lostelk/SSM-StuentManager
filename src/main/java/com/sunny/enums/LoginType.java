@@ -9,7 +9,7 @@ package com.sunny.enums;
  * 登录类型枚举
  */
 public enum LoginType {
-    USER_TYPE(1),
+    ADMIN_TYPE(1),
     STUDENT_TYPE(2);
 
     private Integer type;

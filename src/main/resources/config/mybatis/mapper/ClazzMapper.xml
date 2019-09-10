@@ -8,11 +8,11 @@
     做查询页面，并且，可查询的选项有多个，同时，还让用户自行选择
     并输入查询关键词，那么，按平时的查询语句的动态构造-->
     <insert id="add" parameterType="com.sunny.entity.Clazz">
-        INSERT INTO clazz(name,gradeId,remark)VALUE (#{name},#{gradeId},#{remark});
+        INSERT INTO clazz(name,gradeId,number,email,teacherName,telephone,remark)VALUE (#{name},#{number},#{email},#{teacgerName},#{telephone},#{gradeId},#{remark});
     </insert>
 
     <update id="edit" parameterType="com.sunny.entity.Clazz">
-        UPDATE clazz SET name=#{name},gradeId=#{gradeId},remark=#{remark} WHERE id = #{id}
+        UPDATE clazz SET name=#{name},gradeId=#{gradeId},number=#{number},email=#{email},teacherName=#{teacherName},telephone=#{telephone},remark=#{remark} WHERE id = #{id}
     </update>
     <delete id="delete" parameterType="java.lang.String">
         DELETE FROM clazz where id in (${value})

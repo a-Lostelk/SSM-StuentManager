@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%--开启JSP的el表达式。在一些低版本的Servlet中会默认不开启--%>
 <%@ page isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -18,6 +19,7 @@
     <script type="text/javascript">
 	 var _menus = {
          "menus": [
+             <c:if test="${userType == 1}">
              {
                  "menuid": "1", "icon": "", "menuname": "用户(管理员)管理",
                  "menus": [
@@ -29,6 +31,8 @@
 
                  ]
              },
+             </c:if>
+
              {
                  "menuid": "3", "icon": "", "menuname": "年级信息管理",
                  "menus": [
@@ -108,7 +112,8 @@
 	</noscript>
     <div region="north" split="true" border="false" style="overflow: hidden; height: 30px;background: #7f99be;
         line-height: 20px;color: #fff; font-family: Verdana, 微软雅黑,黑体">
-        <span style="float:right; padding-right:20px;" class="head"><span style="color:red; font-weight:bold;">${userInfo.username}&nbsp;</span>您好&nbsp;&nbsp;&nbsp;<a href="" id="loginOut">安全退出</a></span>
+        <span style="float:right; padding-right:20px;" class="head"><span style="color:red; font-weight:bold;">${userInfo.username}&nbsp;</span>您好&nbsp;&nbsp;&nbsp;
+            <a href="/System/logout" id="logout">安全退出</a></span>
         <span style="padding-left:10px; font-size: 16px; ">学生信息管理系统</span>
     </div>
     <div region="south" split="true" style="height: 30px; background: #D2E0F2; ">

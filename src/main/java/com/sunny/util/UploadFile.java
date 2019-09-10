@@ -9,12 +9,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @project: sms
- * @description: 上传文件的工具类
- * @author: 黄宇辉
- * @date: 6/18/2019-10:45 AM
- * @version: 1.0
- * @website: https://yubuntu0109.github.io/
+ * Created by IntelliJ IDEA.
+ *
+ * @author: fang
+ * @Date: 2019/8/22
+ *
+ * 学生信息管理
  */
 public class UploadFile {
 
@@ -67,7 +67,6 @@ public class UploadFile {
     public static Map<String, Object> getUploadResult(MultipartFile photo,
                                                       String dirPath,
                                                       String uploadPath) {
-
         if (!photo.isEmpty() && photo.getSize() > 0) {
             String originalFilename = photo.getOriginalFilename();
             //上传图片,error_result:存储头像上传失败的错误信息

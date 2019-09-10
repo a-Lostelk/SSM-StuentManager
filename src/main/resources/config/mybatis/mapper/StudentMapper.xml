@@ -7,12 +7,12 @@
         INSERT INTO student
         (studentNumber,studentName,password,phone,sex,email,clazzId,gradeId,photo,remark)
         VALUE
-        (#{studentNumber},#{studentName},#{password},#{phone},#{sex},#{email},#{clazzId},#{gradeId},#{photo},#{remark});
+        (#{studentNumber},#{username},#{password},#{phone},#{sex},#{email},#{clazzId},#{gradeId},#{photo},#{remark});
     </insert>
     <update id="edit" parameterType="com.sunny.entity.Student">
         UPDATE student
         SET
-            studentName=#{studentName},password=#{password},sex=#{sex},
+            username=#{username},password=#{password},sex=#{sex},
             phone=#{phone},email=#{email},clazzId=#{clazzId},gradeId=#{gradeId},photo=#{photo},remark=#{remark}
         WHERE id = #{id}
     </update>
@@ -23,8 +23,8 @@
 
     <select id="findList" resultType="com.sunny.entity.Student" parameterType="java.util.Map">
         SELECT * FROM student WHERE 1 = 1
-        <if test="studentName != null and studentName != ''">
-            and studentName LIKE concat(concat('%',#{studentName}),'%')
+        <if test="username != null and username != ''">
+            and username LIKE concat(concat('%',#{username}),'%')
         </if>
         <if test="clazzId != null and clazzId != ''">
             and clazzId = #{clazzId}
@@ -33,8 +33,8 @@
     </select>
     <select id="getTotal" resultType="java.lang.Integer" parameterType="java.util.Map">
         SELECT COUNT(id) FROM student WHERE 1=1
-        <if test="studentName != null">
-            and studentName LIKE #{studentName}
+        <if test="username != null">
+            and username LIKE #{username}
         </if>
         <if test="gradeId != null">
             and gradeId = #{gradeId}
@@ -44,6 +44,6 @@
         SELECT * FROM student
     </select>
     <select id="findByStudentName" parameterType="java.lang.String" resultType="com.sunny.entity.Student">
-        SELECT * FROM student WHERE studentName = #{studentName}
+        SELECT * FROM student WHERE username = #{username}
     </select>
 </mapper>

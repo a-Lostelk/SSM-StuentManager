@@ -3,7 +3,6 @@ package com.sunny.controller;
 import com.sunny.dto.PageDTO;
 import com.sunny.entity.Clazz;
 import com.sunny.entity.Student;
-import com.sunny.enums.LoginType;
 import com.sunny.service.ClazzService;
 import com.sunny.service.StudentService;
 import com.sunny.util.UploadFile;
@@ -91,28 +90,21 @@ public class StudentController {
     /**
      * 获取学生数据和模糊查询
      *
-     * @param studentName
+     * @param username
      * @param pageDTO
      * @return
      */
     @RequestMapping(value = "/get_list", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> getList(
-            @RequestParam(value = "studentName", required = false, defaultValue = "") String studentName,
+            @RequestParam(value = "username", required = false, defaultValue = "") String username,
             @RequestParam(value = "clazzId", required = false) Integer clazzId,
             HttpServletRequest request,
             PageDTO pageDTO) {
         HashMap<String, Object> hashMap = new HashMap<>();
         Map<String, Object> queryMap = new HashMap<>();
 
-        queryMap.put("studentName", "%" + studentName + "%");
-        Object userType = request.getSession().getAttribute("userType");
-        Student loginStudent = (Student) request.getSession().getAttribute("user");
-        //登录类型为学生时
-        if (LoginType.STUDENT_TYPE.equals(userType.toString())) {
-            System.out.println(LoginType.STUDENT_TYPE);
-            queryMap.put("studentName", "%" + loginStudent.getStudentName() + "%");
-        }
+        queryMap.put("username", "%" + username + "%");
         if (clazzId != null) {
             //根据年级Id查询
             queryMap.put("clazzId", clazzId);
@@ -133,7 +125,7 @@ public class StudentController {
     @ResponseBody
     public Map<String,String> add(Student student) {
         HashMap<String, String> hashMap = new HashMap<>();
-        if (StringUtils.isEmpty(student.getStudentName())) {
+        if (StringUtils.isEmpty(student.getUsername())) {
             hashMap.put("type","error");
             hashMap.put("msg", "姓名不能为空");
             return hashMap;
@@ -167,7 +159,7 @@ public class StudentController {
     @ResponseBody
     public Map<String,String> edit(Student student) {
         HashMap<String, String> hashMap = new HashMap<>();
-        if (StringUtils.isEmpty(student.getStudentName())) {
+        if (StringUtils.isEmpty(student.getUsername())) {
             hashMap.put("type","error");
             hashMap.put("msg", "名称不能为空");
             return hashMap;

@@ -1,5 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,8 +14,6 @@
 	<script type="text/javascript">
 	$(function() {
         var clazzList = ${clazzJSON};
-        console.log(clazzList);
-
 
 		//datagrid初始化
 	    $('#dataList').datagrid({
@@ -37,7 +35,7 @@
                 {field: 'chk', checkbox: true, width: 50},
                 {field: 'id', title: 'ID', width: 50, sortable: true},
                 {field: 'studentNumber', title: '学号', width: 100, sortable: true},
-                {field: 'studentName', title: '姓名', width: 100},
+                {field: 'username', title: '姓名', width: 100},
                 {field: 'password', title: '密码', width: 150},
                 {field: 'sex', title: '性别', width: 50},
                 {field: 'phone', title: '联系方式', width: 150},
@@ -177,7 +175,7 @@
 										$("#add_remark").textbox('setValue', "");
                                         $("#add_clazzList").textbox('setValue', clazzList[1]);
                                         $("#upload-photo").textbox('setValue', "");
-                                        $("#photo-preview").attr("src", "/h-ui/images/default_student_portrait.png");
+
 										//重新刷新页面数据
 										// $('#dataList').datagrid("options").queryParams = {clazzid: clazzid};
 							  			$('#dataList').datagrid("reload");
@@ -213,7 +211,11 @@
 						$("#add_gradeList").combobox("reload");
 					}
 				},
-			]
+			],
+			//$("#photo-preview").attr("src", "/h-ui/images/default_student_portrait.png");
+            onBeforeOpen: function () {
+                $("#photo-preview").attr("src", "/h-ui/images/default_student_portrait.png");
+            }
 	    });
 
 	  	//设置编辑学生窗口
@@ -284,7 +286,7 @@
                 var selectRow = $("#dataList").datagrid("getSelected");
                 $("#edit_id").val(selectRow.id);
                 $("#edit_number").textbox('setValue', selectRow.studentNumber);
-                $("#edit_name").textbox('setValue', selectRow.studentName);
+                $("#edit_name").textbox('setValue', selectRow.username);
                 $("#edit_password").textbox('setValue', selectRow.password);
                 $("#edit_sex").textbox('setValue', selectRow.sex);
                 $("#edit_phone").textbox('setValue', selectRow.phone);
@@ -298,7 +300,7 @@
         //搜索按钮
         $("#search-btn").click(function(){
             $('#dataList').datagrid('load', {
-                studentName: $("#search-name").val(),
+                username: $("#search-name").val(),
                 clazzId: $("#search-clazz-id").combobox('getValue')
             });
         });
@@ -324,14 +326,13 @@
         });
 	});
 
+	//图片回显
 	function upload() {
 	    //获取到返回到iframs中的返回信息
         var data = $(window.frames["photo_target"].document).find("body pre").text();
         data = JSON.parse(data);
         console.log(data);
-        // console.log(data.uploadPath);
         if (data.type == "success") {
-            console.log(data.uploadPath);
             $.messager.alert("消息提醒", "图片上传成功", "info");
             $("#photo-preview").attr("src", data.uploadPath);
             $("#add_photo").val(data.uploadPath); //将图片路径添加到表单隐藏域中
@@ -354,7 +355,9 @@
 		<c:if test="${userType == 1}">
 			<div style="float: left;"><a id="add" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">添加</a></div>
 			<div style="float: left;" class="datagrid-btn-separator"></div>
+		</c:if>
 			<div style="float: left;"><a id="edit" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true">修改</a></div>
+		<c:if test="${userType == 1}">
 			<div style="float: left;"><a id="delete" href="javascript:;" class="easyui-linkbutton" data-options="iconCls:'icon-some-delete',plain:true">删除</a></div>
 		</c:if>
 		<!-- 名称与班级名搜索域 -->
@@ -372,7 +375,7 @@
 			<a href="javascript:" class="easyui-linkbutton"
 			   data-options="iconCls:'icon-class',plain:true">班级名称</a>
 			<!-- 搜索按钮 -->
-			<input id="search-name" class="easyui-textbox" name="studentName"/>
+			<input id="search-name" class="easyui-textbox" name="username"/>
 			<a id="search-btn" href="javascript:" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true">搜索</a>
 		</div>
 
@@ -396,14 +399,14 @@
 	    		<tr>
 	    			<td>学号:</td>
 	    			<td>
-	    				<input id="add_number" name="studentNumber"   class="easyui-textbox" style="width: 200px; height: 30px;" type=""
+	    				<input id="add_number" name="studentNumber" class="easyui-textbox" validType="number" style="width: 200px; height: 30px;" type=""
 							   data-options="required:true, missingMessage:'请输入学号'" />
 	    			</td>
 	    		</tr>
 
 	    		<tr>
 	    			<td>姓名:</td>
-	    			<td><input id="add_name" name="studentName" style="width: 200px; height: 30px;" validType='CHS' class="easyui-textbox"  type="text"
+	    			<td><input id="add_name" name="username" style="width: 200px; height: 30px;" validType='CHS' class="easyui-textbox"  type="text"
 							   data-options="required:true ,missingMessage:'请填写姓名'" /></td>
 	    		</tr>
 				<tr>
@@ -472,7 +475,7 @@
 	    		</tr>
 	    		<tr>
 	    			<td>姓名:</td>
-	    			<td><input id="edit_name" name="studentName" style="width: 200px; height: 30px;" class="easyui-textbox" type="text"  data-options="required:true, missingMessage:'请填写姓名'" /></td>
+	    			<td><input id="edit_name" name="username" style="width: 200px; height: 30px;" class="easyui-textbox" type="text"  data-options="required:true, missingMessage:'请填写姓名'" /></td>
 	    		</tr>
 				<tr>
 					<td>密码:</td>

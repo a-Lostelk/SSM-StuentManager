@@ -2,16 +2,14 @@ package com.sunny.controller;
 
 import com.sunny.entity.Student;
 import com.sunny.entity.User;
+import com.sunny.enums.LoginType;
 import com.sunny.service.StudentService;
 import com.sunny.service.UserService;
 import com.sunny.util.CpachaUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.imageio.ImageIO;
@@ -61,7 +59,8 @@ public class SystemController {
                                      @RequestParam(value = "password", required = true) String password,
                                      @RequestParam(value = "vcode", required = true) String vcode,
                                      @RequestParam(value = "type", required = true) int type,
-                                     HttpServletRequest request) {
+                                     HttpServletRequest request,
+                                     HttpServletResponse response) {
 
         HashMap<String, String> hashMap = new HashMap<>();
         if (StringUtils.isEmpty(username)) {
@@ -96,11 +95,8 @@ public class SystemController {
         //释放session空间
         request.getSession().setAttribute("loginCpacha", null);
 
-        //登录级别
-        int adminType = 1;
-        int studentType = 2;
         //管理员
-        if (type == adminType) {
+        if (type == LoginType.ADMIN_TYPE.getType()) {
             //从数据库中查找用户
             User user = userService.findByUserName(username);
             if (user == null) {
@@ -115,7 +111,8 @@ public class SystemController {
             }
             request.getSession().setAttribute("userInfo", user);
         }
-        if (type == studentType) {
+        //学生
+        if (type == LoginType.STUDENT_TYPE.getType()) {
             Student student = studentService.findByStudentName(username);
             if (student == null) {
                 hashMap.put("type", "error");
@@ -133,6 +130,17 @@ public class SystemController {
         hashMap.put("type", "success");
         hashMap.put("msg", "登录成功");
         return hashMap;
+    }
+
+    /**
+     * 退出登录
+     * @param request
+     * @return
+     */
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        request.getSession().removeAttribute("userInfo");
+        return "redirect:/System/login";
     }
 
     /**

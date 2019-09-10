@@ -20,7 +20,7 @@ public class Student {
      */
     private Long studentNumber;
 
-    private String studentName;
+    private String username;
 
     private String password;
 
