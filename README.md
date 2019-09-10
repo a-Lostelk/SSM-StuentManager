@@ -1,12 +1,12 @@
-###项目介绍
+### 项目介绍
 
 一个基于SSM的学生信息管理系统，由于本人尚在大二，实现功能有限，代码简陋，所幸基本的业务功能和前后端交互没有存在bug，有待深入继续学习
 
 Go！Go！Go！
 
 
-
-####使用技术和工具
+ 
+#### 使用技术和工具
 
 - 系统环境：Windows
 - 开发工具: ID1.8EA、Maven、Git
@@ -17,16 +17,16 @@ Go！Go！Go！
 
 
 
-####学习笔记和记录
+#### 学习笔记和记录
 
 学生信息管理系统笔记
 
 
 
-####项目截图
+#### 项目截图
 
 - 登录页面（学生和管理员）
-![](https://github.com/a-Lostelk/SSM-StuentManager/blob/master/Images/QQ%E6%88%AA%E5%9B%BE20190903085604.png)
+  ![](https://github.com/a-Lostelk/SSM-StuentManager/blob/master/Images/QQ%E6%88%AA%E5%9B%BE20190903085604.png)
   
 - 
 - 主页面
@@ -46,4 +46,4 @@ Go！Go！Go！
 
 
 
-####大致结构
+#### 大致结构
