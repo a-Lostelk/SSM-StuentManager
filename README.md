@@ -15,7 +15,7 @@ Go！Go！Go！
 - JDK版本：jdk1.8
 - 服务器：Tomcat 9.0
 - 数据库：MySQL 5.7
-- 使用技术：Spring + Mybatis + SpringMVC后台框架 面向接口接口编程 前端easyUI框架 
+- 使用技术：Spring + Mybatis + SpringMVC后台框架 面向接口编程 前端easyUI框架 
 
 
 
