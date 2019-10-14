@@ -11,7 +11,7 @@ Go！Go！Go！
 #### 使用技术和工具
 
 - 系统环境：Windows
-- 开发工具: ID1.8EA、Maven、Git
+- 开发工具: IDEA、Maven、Git
 - JDK版本：jdk1.8
 - 服务器：Tomcat 9.0
 - 数据库：MySQL 5.7
