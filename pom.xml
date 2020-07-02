@@ -22,7 +22,7 @@
     <mybatis.generator.core.version>1.3.5</mybatis.generator.core.version>
     <mybatis.spring.version>1.3.1</mybatis.spring.version>
     <mybatis.pagehelper>5.0.3</mybatis.pagehelper>
-    <mysql.connector.version>5.1.29</mysql.connector.version>
+    <mysql.connector.version>8.0.16</mysql.connector.version>
     <log4j.version>1.2.12</log4j.version>
     <common.logging.version>1.2</common.logging.version>
     <log4j-api.version>2.11.2</log4j-api.version>
